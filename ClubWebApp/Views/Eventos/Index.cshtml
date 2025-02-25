@@ -1,0 +1,178 @@
+﻿@model List<ClubWebApp.Application.Dominio.DTOS.EventosDto>
+
+@* <h4 style="left:15px;">EVENTOS</h4>
+@{
+    ViewData["Title"] = "EVENTOS";
+} *@
+
+
+@* Script *@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (TempData["AlertMessage"] != null)
+{
+    <script>
+        $(function () {
+            Swal.fire({
+                title: '¡Éxito!',
+                text: '@TempData["AlertMessage"]',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            });
+        });
+    </script>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        $(function () {
+            Swal.fire({
+                title: 'Error!',
+                text: '@TempData["ErrorMessage"]',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            });
+        });
+    </script>
+
+
+}
+
+@* <p>
+    <a href="javascript:void(0);"
+       onclick="showInPopup('@Url.Action("Cread", "Eventos", new { id = 0 })', '')"
+       class="btn btn-sm btn-primary text-white">
+        <i class="fa fa-plus-circle"></i> NUEVO EVENTO
+    </a>
+</p> *@
+
+<div class="">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="text-center">NUESTROS EVENTOS</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                @foreach (var _eventos in Model)
+                {
+                    <div class="col-md-8">
+                        <div class="card shadow-lg mb-5">
+                            <div class="card-body eventos-text">
+                                <h5 class="card-title">@_eventos.Nombre</h5>
+                                <p class="card-text">Fecha del Evento: @_eventos.Fecha_Evento</p>
+                                <p class="card-text">Asistentes: @_eventos.Cantidad_Personas</p>
+                                <p class="card-text">No Salón: @_eventos.Numero_Salon</p>
+                                <p class="card-text">Ubicación: @_eventos.Ubicacion</p>
+                                <p class="card-text">Salón: @_eventos.Salon</p>
+                                <p class="card-text">Descripción: @_eventos.Descripcion</p>
+                              
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+
+            @* <table class="table table-active table-responsive">
+            <thead>
+            <tr class="bg-secondary text-center">
+            <td>Titulo</td>
+            <td>Descripción</td>
+            <td>Fecha del Evento</td>
+            <td>Salón</td>
+            <td>Número Salón</td>
+            <td>Ubicación</td>
+            <td>Cantidad de Personas</td>
+
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var _eventos in Model)
+            {
+            <tr class="bg-light text-center">
+            <td>@_eventos.Nombre</td>
+            <td>@_eventos.Descripcion</td>
+            <td>@_eventos.Fecha_Evento</td>
+            <td>@_eventos.Salon</td>
+            <td>@_eventos.Numero_Salon</td>
+            <td>@_eventos.Ubicacion</td>
+            <td>@_eventos.Cantidad_Personas</td>
+            </tr>
+            }
+            </tbody>
+            </table> *@
+            <a class="boton-enlace" href="@Url.Action("Cread", "Eventos")">REGISTRAR EVENTO</a>
+        </div>
+    </div>
+    <br />
+    <hr />
+</div>
+
+@* <partial name="_MostrarModal" />
+<partial name="_ModalEliminar" /> *@
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="~/js/showmodal.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#producto').DataTable({
+                "language": {
+                    url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                },
+            });
+        });
+    </script>
+
+    <script>
+        sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/Productos/Delete/', false);
+    </script>
+}
+
+
+<!--Codigo para mostrar los eventos por la fecha-->
+<style>
+    /* Ocultar inicialmente los eventos */
+    .evento {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+</style>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let eventos = Array.from(documen.querySelectorAll(".evento"));
+
+        //Ordenar los eventos por la fecha
+        eventos.sort((a, b) => {
+            let fechaA = new Date(a.getAttribute("date-fecha"));
+            let fechaB = new Date(b.getAttribute("date-fecha"));
+            return fechaA - fechaB;
+
+        });
+
+        let tbody = document.getElementById("eventos-tbody");
+        tbody.innerHTML = "";
+        eventos.forEach(evento => tbody.appendChild(evento));
+
+        eventos.forEach((evento, index) => {
+            setTimeout(() => {
+                evento.style.opacity = "1";
+                evento.style.transform = "translateY(0)";
+
+            }, index * 500);
+
+        });
+
+    });
+
+</script>

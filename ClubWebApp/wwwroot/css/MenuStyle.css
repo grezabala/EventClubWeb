@@ -1,0 +1,75 @@
+﻿/* Estilos generales */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar li {
+        display: inline;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 15px;
+        transition: background 0.3s;
+    }
+
+        .navbar a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+/* Estilo para la versión de columna (por defecto en móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .navbar ul {
+            flex-direction: column;
+            display: none;
+            background-color: #333;
+            width: 100%;
+            text-align: center;
+        }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+    .btn-menu {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+    }
+}
+
+/* Efecto sticky cuando se desplaza */
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

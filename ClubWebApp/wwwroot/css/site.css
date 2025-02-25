@@ -1,0 +1,447 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/*NUEVO ESTILOS*/
+/* Estilo general para el header y el navbar */
+header {
+    background: linear-gradient(135deg, #4a90e2, #50c9ce) !important; /* Colores intuitivos y agradables */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+    .navbar-brand:hover {
+        color: #d9f7ff;
+        text-decoration: none;
+    }
+
+/*.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.form-caja {
+    padding-bottom: 10px;
+}
+
+.form-caja-text {
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10px;
+}*/
+
+/* Estilo de los botones del navbar */
+.navbar-toggler {
+    border: none;
+}
+/*.navbar-toggler-icon {
+    background-image: url("~/images/eventos-inicio.png");
+}*/
+
+/* Estilo para los enlaces del navbar */
+.nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        color: #d9f7ff;
+        border-radius: 8px;
+    }
+
+.nav-item {
+    margin: 0 0.5rem;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: rgba(74, 144, 226, 0.9) !important;
+        padding: 1rem;
+    }
+
+    .nav-link {
+        padding: 0.75rem;
+    }
+}
+
+/* Mejora de la accesibilidad */
+.navbar a:focus {
+    outline: 3px solid #d9f7ff;
+    outline-offset: 2px;
+}
+
+/*CSS DE LA PAGINA DE INICIO*/
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-item {
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 5px;
+    }
+
+/* Hero Section */
+.hero {
+    background-color: #d9f7ff;
+    text-align: center;
+    padding: 4rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: #333;
+}
+
+/* Secciones de eventos */
+.event-section {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .event-section h2 {
+        color: #4a90e2;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .event-section .event-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    .event-section article {
+        margin-top: 1rem;
+    }
+
+    .event-section ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+    }
+
+/* Footer */
+footer {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/*ESTILOS CSS PARA LAS TABLAS*/
+/* Estilos generales para la tabla */
+
+.eventos-text {
+    background-color: white;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: 0.3s ease-in-out;
+    left: 15px;
+    text-align: center;
+}
+
+    .eventos-text p {
+        color:black;
+    }
+    .eventos-text h {
+        font-size: 20px !important;
+        color:black;
+    }
+
+    .eventos-text:hover {
+        box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+        border-color: #6c757d;
+        transition: transform 0.2s ease;
+        cursor: zoom-in;
+    }
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+     overflow-x: auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+p {
+    text-wrap: pretty;
+}
+
+.text-linear{
+    white-space: nowrap; /* Evita el salto de línea */
+    font-family: Arial, sans-serif; /* Usa Arial como fuente */
+    font-size: 15px; /* Ajusta el tamaño según necesites */
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+}
+.card-header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+card-body {
+    background: white;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+    /* Mejorar el header de la tabla */
+    .table thead {
+        background-color: #007bff; /* Color azul para el encabezado */
+        color: white;
+    }
+
+    /* Alinear correctamente el texto en celdas */
+    .table td, .table th {
+        padding: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    /* Color y sombra en las filas alternadas */
+    .table tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    /* Efecto hover en las filas */
+    .table tbody tr:hover {
+        background-color: #e9ecef;
+        transition: background-color 0.2s;
+    }
+
+/* Botones personalizados */
+.btn {
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Botón Editar */
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .btn-outline-warning:hover {
+        background-color: #ffc107;
+        color: #fff;
+    }
+
+/* Botón Eliminar */
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6;
+    }
+
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+        .table tbody td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #6c757d;
+        }
+}
+
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #666;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+.bg-secondary {
+    background-color: #299ce6 !important;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: #f3f3f3;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.btn-outline-warning {
+    background-color: #FFC107;
+    color: black;
+}
+
+.btn-outline-danger {
+    background-color: #DC3545;
+    color: white;
+}

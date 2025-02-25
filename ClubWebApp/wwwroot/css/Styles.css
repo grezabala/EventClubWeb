@@ -1,0 +1,334 @@
+﻿/* Estilo general para el header y el navbar */
+header {
+    background: linear-gradient(135deg, #4a90e2, #50c9ce); /* Colores intuitivos y agradables */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+    .navbar-brand:hover {
+        color: #d9f7ff;
+        text-decoration: none;
+    }
+
+/* Estilo de los botones del navbar */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Estilo para los enlaces del navbar */
+.nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #d9f7ff;
+        border-radius: 8px;
+    }
+
+.nav-item {
+    margin: 0 0.5rem;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: rgba(74, 144, 226, 0.9);
+        padding: 1rem;
+    }
+
+    .nav-link {
+        padding: 0.75rem;
+    }
+}
+
+/* Mejora de la accesibilidad */
+.navbar a:focus {
+    outline: 3px solid #d9f7ff;
+    outline-offset: 2px;
+}
+
+/*CSS PARA EL FORMULARIO*/
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0px auto;
+    align-content:center;
+    margin-bottom: 95px;
+    left: 75px;
+}
+
+/**Estilo para la cabecera*/
+.card-header {
+    background: linear-gradient(45deg, #62b6eb, #218838);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/**Estilos para los inputs*/
+.form-caja {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+    .form-caja input {
+        width: 100%;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        padding: 10px;
+        font-size: 15px !important;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+        background: transparent;
+        transition: 0.3s ease-in-out;
+    }
+
+        .form-caja input:focus {
+
+            border-color: #28a745;
+            box-shadow:0 0 8px rgba(40, 167, 69, 0.5);
+
+        }
+
+        /**Animación para  los label*/
+    .form-caja label {
+        position: absolute;
+        top: 50%;
+        left: 12.4px;
+        transform: translateY(-50%);
+        background: white;
+        padding: 0 5px;
+        color: #999;
+        font-size: 14px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .form-caja input:focus + label,
+    .form-caja input:not(:placeholder-shown) + label {
+        top: 0;
+        font-size: 12px;
+        color: #28a745;
+    }
+
+    /**Botones*/
+.card-footer {
+    text-align:center;
+    padding-top: 10px;
+}
+
+    .card-footer .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        transition: 0.3s ease-in-out;
+    }
+
+.btn-success {
+    background: #28a745;
+    border:none;
+}
+
+    .btn-success:hover {
+        background: #218838;
+        transform: scale(1.05);
+    }
+
+.btn-primary {
+    background: #007bff;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+    }
+
+/* Efecto al pasar el mouse sobre los inputs */
+.form-caja input:hover {
+    border-color: #6c757d;
+}
+
+/* Mensajes de validación */
+.text-danger {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/*Estilos base de los enlace botones*/
+.boton-enlace {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background: linear-gradient(45deg, #48adee, #79e4f9);
+    border-radius: 8px 12px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    
+}
+
+/*Efecto hover*/
+    .boton-enlace:hover {
+        background: linear-gradient(45deg, #78f8b7, #20f388);
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+/* Efecto cuando se clic */
+.boton-enlace:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*ESTILOS CSS PARA LA VISTA DE CONTACTOS*/
+.contact-body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    margin-bottom: 300px;
+}
+
+/*Header*/
+.contact-header {
+    background: linear-gradient(45deg, #62b6eb, #218838);
+    text-align: center;
+    font-size: 23px;
+}
+
+/*Container*/
+.contact-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top:20px;
+}
+
+    .contact-container h2 {
+        color:#333;
+    }
+
+    .contact-container p {
+        color:#555;
+    }
+
+    .contact-container input[type="text"],
+    input[type="email"],
+    textarea {
+        padding:10px;
+        margin:10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width:100%;
+    }
+
+    .contact-container textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+/*form*/
+.contact-form {
+    display: flex;
+    flex-direction:column;
+}
+
+/*button*/
+.contact-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align:center;
+}
+
+    .contact-button:hover {
+        background: linear-gradient(45deg, #78f8b7, #087452 );
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+   /**Estilos css para el footer*/
+.form-footer {
+    padding:20px 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.form-footer-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.form-footer-column {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.form-footer h4 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/*Media*/
+@media(max-width: 768px) {
+    .form-footer-container {
+        flex-direction:column;
+        align-items: center;
+    }
+
+    .form-footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
