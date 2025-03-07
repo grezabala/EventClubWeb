@@ -31,7 +31,7 @@ namespace ClubWebApp.Application.Dominio.Repository
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Clear();
 
-                cmd.Parameters.Add(new SqlParameter("@IdCliente", SqlDbType.Int) { Value = eventosDto.IdCliente });
+                cmd.Parameters.Add(new SqlParameter("@ClienteId", SqlDbType.Int) { Value = eventosDto.ClienteId });
                 cmd.Parameters.Add(new SqlParameter("@Codigo", SqlDbType.VarChar, 20) { Value = eventosDto.Codigo });
                 cmd.Parameters.Add(new SqlParameter("@Descripcion", SqlDbType.VarChar, 250) { Value = eventosDto.Descripcion });
                 cmd.Parameters.Add(new SqlParameter("@Fecha_Evento", SqlDbType.DateTime) { Value = eventosDto.Fecha_Evento });
@@ -110,7 +110,7 @@ namespace ClubWebApp.Application.Dominio.Repository
                     var evento = new EventosDto
                     {
                         ID = reader.GetInt32(reader.GetOrdinal("ID")),
-                        IdCliente = reader.GetInt32(reader.GetOrdinal("IdCliente")),
+                        ClienteId = reader.GetInt32(reader.GetOrdinal("IdCliente")),
                         Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
                         Codigo = reader.GetString(reader.GetOrdinal("Codigo")),
                         Fecha_Evento = reader.GetDateTime(reader.GetOrdinal("Fecha_Evento")),
@@ -140,7 +140,7 @@ namespace ClubWebApp.Application.Dominio.Repository
                 if (!string.IsNullOrEmpty(code))
                     query = query.Where(x => x.Codigo.Contains(code.ToLower().Trim()) == x.Codigo.Contains(code.ToLower().Trim()));
 
-                return await query.OrderBy(x => x.IdCliente).ToListAsync();
+                return await query.OrderBy(x => x.ClienteId).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -201,7 +201,7 @@ namespace ClubWebApp.Application.Dominio.Repository
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Clear();
 
-                cmd.Parameters.Add(new SqlParameter("@IdCliente", SqlDbType.Int) { Value = eventosDto.IdCliente });
+                cmd.Parameters.Add(new SqlParameter("@ClienteId", SqlDbType.Int) { Value = eventosDto.ClienteId });
                 cmd.Parameters.Add(new SqlParameter("@Codigo", SqlDbType.VarChar, 20) { Value = eventosDto.Codigo });
                 cmd.Parameters.Add(new SqlParameter("@Descripcion", SqlDbType.VarChar, 250) { Value = eventosDto.Descripcion });
                 cmd.Parameters.Add(new SqlParameter("@Fecha_Evento", SqlDbType.DateTime) { Value = eventosDto.Fecha_Evento });

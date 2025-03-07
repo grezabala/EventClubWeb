@@ -48,5 +48,12 @@ namespace ClubWebApp.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Registrarse(POSTClientesDto model)
+        {
+
+            return View();
+        }
     }
 }

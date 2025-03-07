@@ -8,7 +8,7 @@ namespace ClubWebApp.Application.Infraestructura.ValidatorEntities
     {
         public EventosValidator()
         {
-            RuleFor(p => p.IdCliente)
+            RuleFor(p => p.ClienteId)
                 .NotNull()
                 .NotEmpty()
                 .WithMessage("Este campo es requerido");

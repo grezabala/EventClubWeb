@@ -1,0 +1,109 @@
+﻿@model ClubWebApp.Application.Dominio.DTOS.POSTClientesDto
+
+@{
+    ViewData["Title"] = "Registrarse";
+}
+
+<div class="row mt-5 justify-content-center">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3 class="text-capitalize">Registrarse</h3>
+            </div>
+            <div class="card-body">
+                <main class="">
+                    <form asp-action="Registrarse" asp-controller="Clientes" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-row">
+                            <div class="form-group col-md-10">
+                                <div class="form-group form-caja">
+                                    <input asp-for="NombreCompleto" class="form-control" value="" placeholder="Nombre Completo" required />
+                                    <label>Nombre Completo</label>
+                                    <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-10">
+                                <div class="form-group form-caja">
+                                <input asp-for="Cedula" class="form-control" placeholder="Cédula" required />
+                                <label>Cédula</label>
+                                    <span asp-validation-for="Cedula" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-10">
+                                <div class="form-group form-caja">
+                                    <input asp-for="Telefono" class="form-control" placeholder="Número de telefono" required />
+                                    <label>Telefono (809 829 849)</label>
+                                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-10">
+                                <div class="form-group form-caja">
+                                    <input asp-for="Celular" class="form-control" placeholder="Número de celular" required />
+                                    <label>Celular (809 829 849)</label>
+                                    <span asp-validation-for="Celular" class="text-danger"></span>
+                                </div>
+                            </div>                                             
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-10">
+                                <div class="form-group form-caja">
+                                    <input asp-for="Email" class="form-control" placeholder="ej:events@gmail" required />
+                                    <label>Correo Electrónico</label>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-10">
+                                <div class="form-group form-caja">
+                                    <input asp-for="Direccion" class="form-control" placeholder="Dirección" required />
+                                    <label>Dirección</label>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <p class="text-center">CREAR UN USUARIO</p>
+                        <hr />
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <div class="form-group form-caja">
+                                    <input asp-for="Usuario" class="form-control" placeholder="ej:event" required />
+                                    <label>Usuario</label>
+                                    <span asp-validation-for="Usuario" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group form-caja">
+                                    <input asp-for="PasswordUser" class="form-control" placeholder="Contraseña" required />
+                                    <label>Contraseña</label>
+                                    <span asp-validation-for="PasswordUser" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group form-caja">
+                                    <input asp-for="ConfirmarPasswordUser" class="form-control" placeholder="Confirmar Contraseña" required />
+                                    <label>Confirmar Contraseña</label>
+                                    <span asp-validation-for="ConfirmarPasswordUser" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-sm btn-success">
+                                    <i class="fa fa-save"> </i> Guardar
+                                </button>
+                                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
+                                    <i class="fa fa-ban"></i> Cancelar
+                                </button>
+                                <br />
+                                <hr />
+                                <a class="boton-enlace" href="@Url.Action("Login", "LoginClub")">INICIO DE SESION</a>
+                            </div>
+                        </div>
+                    </form>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
