@@ -41,5 +41,12 @@ namespace ClubWebApp.Controllers
                 throw;
             }
         }
+
+        [HttpGet]
+        public IActionResult Registrarse() 
+        {
+
+            return View();
+        }
     }
 }

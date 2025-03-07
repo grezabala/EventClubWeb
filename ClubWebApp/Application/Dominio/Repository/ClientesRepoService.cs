@@ -29,7 +29,7 @@ namespace ClubWebApp.Application.Dominio.Repository
                 if (clienteId <= 0)
                     throw new Exception(_getExceptionValidator);
 
-                return await _context.Clientes.FirstOrDefaultAsync(x => x.IdCliente == clienteId);
+                return await _context.Clientes.FirstOrDefaultAsync(x => x.ClienteId == clienteId);
             }
             catch (Exception ex)
             {
@@ -98,9 +98,9 @@ namespace ClubWebApp.Application.Dominio.Repository
 
                 if (_getEdit != null)
                 {
-                    _getEdit.IdCliente = clienteId;
-                    _getEdit.CodigoDelCliente = clientes.CodigoDelCliente;
-                    _getEdit.Descripcion = clientes.Descripcion;
+                    _getEdit.ClienteId = clienteId;
+                    _getEdit.Codigo = clientes.Codigo;
+                   // _getEdit.Descripcion = clientes.Descripcion;
                     _getEdit.FechaIngreso = clientes.FechaIngreso;
                     _getEdit.Cedula = clientes.Cedula;
                     _getEdit.Celular = clientes.Celular;

@@ -1,0 +1,95 @@
+﻿body {
+}
+
+/* Estilos generales del menú */
+.sub-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #4a90e2, #50c9ce);
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del menú */
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* Logo del menú */
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-brand img {
+        width: 40px; /* Ajusta el tamaño del logo */
+        height: auto;
+        margin-right: 10px;
+    }
+
+/* Navegación */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+    .nav-link:hover {
+        color: #ffeb3b;
+    }
+
+/* Botón de menú en móviles */
+.btn-menu {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos para menú responsive */
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-item {
+        padding: 10px 0;
+    }
+
+    .btn-menu {
+        display: block;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+}
+

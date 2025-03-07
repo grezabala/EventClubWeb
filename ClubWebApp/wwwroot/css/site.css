@@ -1,24 +1,24 @@
-html {
-  font-size: 14px;
+ï»¿html {
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 /*NUEVO ESTILOS*/
 /* Estilo general para el header y el navbar */
@@ -42,6 +42,14 @@ header {
         color: #d9f7ff;
         text-decoration: none;
     }
+
+/*.bg-white {
+    --bs-bg-opacity: 1;*/
+/*  background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;*/
+/*top:0;*/
+/*    overflow: hidden;*/
+/*    position:fixed;*/
+/*}*/
 
 /*.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -130,13 +138,73 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+    /* padding-bottom: -200px;
+    margin-bottom:10px;*/
 }
 
 /* Estilos del encabezado */
 header {
     background-color: #4a90e2;
-    color: white;
+    color: #fff;
+    font-size: 16px;
     padding: 1rem 0;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    text-align: center !important;
+    text-align: right;
+}
+
+.sub-header {
+    /* background-color: rgba(52, 152, 219);*/ /*#4a90e2 #09a9d3 */
+    background: linear-gradient(135deg, #4a90e2, #50c9ce);
+    color: black;
+    text-transform: full-width;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+
+.sub-header {
+    /*position: sticky;
+    top: 0;
+    background: #0671e4;*/ /*Fondo semitransparente */
+    /*backdrop-filter: blur(2px);*/ /*Difuminar fondo */
+    /*padding: 0px;
+    z-index: 0;*/
+}
+
+    .sub-header li a {
+        font-size: 18px;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+.scrolled .sub-header li a {
+    color: white; /* Cambia el color cuando se hace scroll */
+}
+
+
+.container-body {
+    margin-top: 120px;
+    margin-bottom: 70px;
+    top: 0;
+    bottom: 20px;
+}
+
+.container-event {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    top: 0;
+    bottom: 20px;
+    width: 980px;
+    /*    margin-right:-30px;*/
+    padding-top: 30px;
+    margin: 15px;
+}
+
+section {
+    margin-top: 150px;
 }
 
 .navbar {
@@ -149,7 +217,7 @@ header {
 .navbar-brand {
     font-size: 1.8rem;
     font-weight: bold;
-    color: white;
+    color: white !important;
     text-transform: uppercase;
 }
 
@@ -252,11 +320,12 @@ footer {
 }
 
     .eventos-text p {
-        color:black;
+        color: black;
     }
+
     .eventos-text h {
         font-size: 20px !important;
-        color:black;
+        color: black;
     }
 
     .eventos-text:hover {
@@ -274,24 +343,26 @@ footer {
     background-color: #f9f9f9;
     border-radius: 8px;
     overflow: hidden;
-     overflow-x: auto;
+    overflow-x: auto;
     display: block;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 p {
     text-wrap: pretty;
 }
 
-.text-linear{
-    white-space: nowrap; /* Evita el salto de línea */
+.text-linear {
+    white-space: nowrap; /* Evita el salto de lï¿½nea */
     font-family: Arial, sans-serif; /* Usa Arial como fuente */
-    font-size: 15px; /* Ajusta el tamaño según necesites */
+    font-size: 15px; /* Ajusta el tamaï¿½o segï¿½n necesites */
 }
 
 .row {
     width: 100%;
     max-width: 1200px;
 }
+
 .card-header {
     background: #333;
     color: white;
@@ -309,29 +380,29 @@ card-body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-    /* Mejorar el header de la tabla */
-    .table thead {
-        background-color: #007bff; /* Color azul para el encabezado */
-        color: white;
-    }
+/* Mejorar el header de la tabla */
+.table thead {
+    background-color: #007bff; /* Color azul para el encabezado */
+    color: white;
+}
 
-    /* Alinear correctamente el texto en celdas */
-    .table td, .table th {
-        padding: 12px;
-        text-align: center;
-        vertical-align: middle;
-    }
+/* Alinear correctamente el texto en celdas */
+.table td, .table th {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
 
-    /* Color y sombra en las filas alternadas */
-    .table tbody tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
+/* Color y sombra en las filas alternadas */
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
 
-    /* Efecto hover en las filas */
-    .table tbody tr:hover {
-        background-color: #e9ecef;
-        transition: background-color 0.2s;
-    }
+/* Efecto hover en las filas */
+.table tbody tr:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.2s;
+}
 
 /* Botones personalizados */
 .btn {
@@ -341,7 +412,7 @@ card-body {
     font-size: 0.9rem;
 }
 
-/* Botón Editar */
+/* Botï¿½n Editar */
 .btn-outline-warning {
     color: #ffc107;
     border-color: #ffc107;
@@ -353,7 +424,7 @@ card-body {
         color: #fff;
     }
 
-/* Botón Eliminar */
+/* Botï¿½n Eliminar */
 .btn-outline-danger {
     color: #dc3545;
     border-color: #dc3545;
@@ -445,3 +516,176 @@ tbody tr:hover {
     background-color: #DC3545;
     color: white;
 }
+
+/*ICONO DEL FOOTER*/
+
+.footer-icon {
+    bottom: 10px;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-contactos {
+    color: aliceblue;
+    padding: 12px;
+    bottom: 10px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Efecto general para todos los botones */
+.btn-social {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+    /* Efecto hover: cambia de color y aplica zoom */
+    .btn-social:hover {
+        transform: scale(1.1);
+        color: white !important; /* Color del Ã­cono */
+    }
+
+/* Colores personalizados por red social */
+.btn-facebook:hover {
+    background-color: #1877F2 !important;
+    border-color: #1877F2 !important;
+}
+
+.btn-twitter:hover {
+    background-color: #1DA1F2 !important;
+    border-color: #1DA1F2 !important;
+}
+
+.btn-instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+    border-color: #dc2743 !important;
+}
+
+.btn-linkedin:hover {
+    background-color: #0077B5 !important;
+    border-color: #0077B5 !important;
+}
+
+.btn-youtube:hover {
+    background-color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+
+.btn-tiktok:hover {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.btn-whatsapp:hover {
+    background-color: #25D366 !important;
+    border-color: #25D366 !important;
+}
+
+/* Nuevo: Estilo para Pinterest */
+.btn-pinterest:hover {
+    background-color: #E60023 !important;
+    border-color: #E60023 !important;
+}
+
+/* Estilos generales del pie de pÃ¡gina */
+.footer-div {
+    text-align: center;
+    padding: 15px;
+    background-color: #f8f9fa; /* Fondo suave */
+    border-top: 2px solid #ddd; /* LÃ­nea superior sutil */
+}
+
+.footer-p {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+/* Estilos para el enlace de contacto */
+.footer-contact-link {
+    text-decoration: none;
+    color: #007bff; /* Azul Bootstrap por defecto */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+    /* Cambio de color y efecto al pasar el mouse */
+    .footer-contact-link:hover {
+        color: #00c96d !important; /* Verde brillante */
+        text-decoration: underline;
+    }
+
+    /* Efecto en el icono de contacto */
+    .footer-contact-link i {
+        margin-right: 5px;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    /* PequeÃ±o zoom y cambio de color en el icono al pasar el mouse */
+    .footer-contact-link:hover i {
+        transform: scale(1.2);
+        color: #00c96d !important;
+    }
+
+    /* ðŸ”¥ SOLUCIÃ“N: Forzar el color al hacer hover ðŸ”¥ */
+    .footer-contact-link:hover,
+    .footer-contact-link:hover i {
+        color: #00c96d !important; /* Verde brillante */
+    }
+
+        /* PequeÃ±o zoom y cambio de color en el icono al pasar el mouse */
+        .footer-contact-link:hover i {
+            transform: scale(1.2);
+        }
+/*CSS FORMULARIO LOGIN*/
+
+.form-login {
+    margin-top:10px;
+    bottom:-70px !important;
+    margin-bottom:100px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin:40px;
+    overflow: hidden;
+    z-index: 1000;
+    top:-10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.form-login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-floating input {
+    border:none;
+    border-bottom:2px solid #ccc;
+    border-radius:0;
+    padding-left:10px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .login-floating input:focus {
+        border-bottom: 2px solid #007bff;
+        outline:none;
+        box-shadow:none;
+    }
+
+    /*Botones de inicio de sesion*/
+.login-btn {
+    background-color:#007bff;
+    border:none;
+    transition: all 0.3s ease-in-out;
+}
+
+    .login-btn:hover {
+        background-color:#0056b3;
+        transform:scale(1.05);
+    }
+
+

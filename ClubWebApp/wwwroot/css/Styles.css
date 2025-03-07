@@ -66,16 +66,56 @@ header {
 }
 
 /*CSS PARA EL FORMULARIO*/
+.sticky-form {
+    position: relative;
+    top: 60px; /*Ajusta esta altura según la del menú */
+    z-index: 1000;
+}
+
+@media (min-width: 7000px) {
+    .sticky-form {
+        position: fixed;
+        top: 60px;  /*Ajusta según la altura del menú */
+        width: calc(100% - 20px);  /*Ajusta el ancho para que no se desborde */
+        max-width: 800px; /*Ajusta según el diseño */
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow-y: auto;
+        max-height: 80vh; /*Limita la altura para permitir scroll interno */
+    }
+}
+
 .card {
+    top: 0;
+    position: relative;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background: #ffffff;
     padding: 20px;
     max-width: 1000px;
     margin: 0px auto;
-    align-content:center;
+    align-content: center;
     margin-bottom: 95px;
     left: 75px;
+    z-index: 1000;
+    overflow-y: hidden;
+    position: relative;
+    max-width: 1200px;
+}
+
+.card-main {
+    margin-top: 150px;
+    top: 0px;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 100px;
+    padding-top: 10px;
+  
 }
 
 /**Estilo para la cabecera*/
@@ -100,7 +140,7 @@ header {
     .form-caja input {
         width: 100%;
         white-space: nowrap;
-        overflow:hidden;
+        overflow: hidden;
         text-overflow: ellipsis;
         padding: 10px;
         font-size: 15px !important;
@@ -113,13 +153,11 @@ header {
     }
 
         .form-caja input:focus {
-
             border-color: #28a745;
-            box-shadow:0 0 8px rgba(40, 167, 69, 0.5);
-
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
         }
 
-        /**Animación para  los label*/
+    /**Animación para  los label*/
     .form-caja label {
         position: absolute;
         top: 50%;
@@ -139,9 +177,9 @@ header {
         color: #28a745;
     }
 
-    /**Botones*/
+/**Botones*/
 .card-footer {
-    text-align:center;
+    text-align: center;
     padding-top: 10px;
 }
 
@@ -154,7 +192,7 @@ header {
 
 .btn-success {
     background: #28a745;
-    border:none;
+    border: none;
 }
 
     .btn-success:hover {
@@ -199,21 +237,20 @@ header {
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border: 2px solid transparent;
-    
 }
 
-/*Efecto hover*/
+    /*Efecto hover*/
     .boton-enlace:hover {
         background: linear-gradient(45deg, #78f8b7, #20f388);
         transform: scale(1.05);
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
-/* Efecto cuando se clic */
-.boton-enlace:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
+    /* Efecto cuando se clic */
+    .boton-enlace:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
 
 /*ESTILOS CSS PARA LA VISTA DE CONTACTOS*/
 .contact-body {
@@ -234,31 +271,31 @@ header {
 
 /*Container*/
 .contact-container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
     .contact-container h2 {
-        color:#333;
+        color: #333;
     }
 
     .contact-container p {
-        color:#555;
+        color: #555;
     }
 
     .contact-container input[type="text"],
     input[type="email"],
     textarea {
-        padding:10px;
-        margin:10px 0;
+        padding: 10px;
+        margin: 10px 0;
         border-radius: 5px;
         border: 1px solid #ccc;
-        width:100%;
+        width: 100%;
     }
 
     .contact-container textarea {
@@ -269,7 +306,7 @@ header {
 /*form*/
 .contact-form {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 /*button*/
@@ -281,7 +318,7 @@ header {
     border-radius: 8px 12px;
     cursor: pointer;
     width: 100%;
-    text-align:center;
+    text-align: center;
 }
 
     .contact-button:hover {
@@ -292,12 +329,11 @@ header {
         font-family: 'Times New Roman', Times, serif;
     }
 
-   /**Estilos css para el footer*/
+/**Estilos css para el footer*/
 .form-footer {
-    padding:20px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
-
 }
 
 .form-footer-container {
@@ -323,7 +359,7 @@ header {
 /*Media*/
 @media(max-width: 768px) {
     .form-footer-container {
-        flex-direction:column;
+        flex-direction: column;
         align-items: center;
     }
 

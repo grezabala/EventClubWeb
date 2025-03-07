@@ -6,7 +6,7 @@ namespace ClubWebApp.Aplication.Dominio.Data.DbConnectionSql
 {
     public class ConnectionSqlServer
     {
-        public SqlConnection _connection = new SqlConnection("Data Source=(local); Initial Catalog=ClubAltamaria; Integrated Security=True; MultipleActiveResultSets=True; Encrypt=True; TrustServerCertificate=True");
+        public SqlConnection _connection = new SqlConnection("Data Source=(local); Initial Catalog=SistClubEventDb; Integrated Security=True; MultipleActiveResultSets=True; Encrypt=True; TrustServerCertificate=True");
 
         public SqlConnection OpenConnection()
         {
@@ -24,7 +24,7 @@ namespace ClubWebApp.Aplication.Dominio.Data.DbConnectionSql
         }
         public string GetConexion() 
         {
-            string _connection = "Data Source=(local); Initial Catalog=ClubAltamaria; Integrated Security=True; MultipleActiveResultSets=True; Encrypt=True; TrustServerCertificate=True";
+            string _connection = "Data Source=(local); Initial Catalog=SistClubEventDb; Integrated Security=True; MultipleActiveResultSets=True; Encrypt=True; TrustServerCertificate=True";
             return _connection;
 
         }
