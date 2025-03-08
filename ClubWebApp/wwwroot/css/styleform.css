@@ -1,0 +1,128 @@
+﻿/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que el formulario pase por debajo del menú */
+header {
+    position: fixed;
+    overflow: hidden;
+    padding: 1rem 0;
+    left: 0;
+    width: 100%;
+    /* height: 90px; */ /*Ajusta según la altura de tu menú */
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+main {
+    position: relative;
+    z-index: 0;
+    margin-top: 20px; /* Ajusta este valor según la altura de tu menú */
+    width:900px;
+}
+
+.card-body {
+    background: #fff;
+    padding: 20px;
+    width:1000px !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   /* max-width: 800px;*/
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    padding-bottom: -20px;
+    margin-top:55px;
+    margin-bottom:70px;
+    margin-block:70px;
+}
+
+/* Estilos de los campos del formulario */
+.form-caja {
+    position: relative;
+    margin-bottom: 20px;
+    left:95px;
+}   
+
+    .form-caja input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: border 0.3s ease;
+        position: relative;
+        z-index: 0;
+    }
+
+        .form-caja input:focus {
+            border-color: #28a745;
+        }
+
+    .form-caja label {
+        position: absolute;
+        left: 12px;
+        font-size: 16px;
+        color: #777;
+        transition: all 0.3s ease;
+    }
+
+    .form-caja input:focus + label,
+    .form-caja input:not(:placeholder-shown) + label {
+        top: 5px;
+        left: 10px;
+        font-size: 12px;
+        color: #28a745;
+        background: #fff;
+        padding: 0 5px;
+    }
+
+/* Botones */
+.btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.btn-success {
+    background: #28a745;
+    border: none;
+    color: white;
+}
+
+    .btn-success:hover {
+        background: #218838;
+    }
+
+.btn-primary {
+    background: #007bff;
+    border: none;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background: #0056b3;
+    }
+
+/* Enlace de inicio de sesión */
+.boton-enlace {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+    .boton-enlace:hover {
+        color: #0056b3;
+    }

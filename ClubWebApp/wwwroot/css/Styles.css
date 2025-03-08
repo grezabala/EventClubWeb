@@ -75,8 +75,8 @@ header {
 @media (min-width: 7000px) {
     .sticky-form {
         position: fixed;
-        top: 60px;  /*Ajusta según la altura del menú */
-        width: calc(100% - 20px);  /*Ajusta el ancho para que no se desborde */
+        top: 60px; /*Ajusta según la altura del menú */
+        width: calc(100% - 20px); /*Ajusta el ancho para que no se desborde */
         max-width: 800px; /*Ajusta según el diseño */
         left: 50%;
         transform: translateX(-50%);
@@ -115,7 +115,6 @@ header {
     padding: 10px;
     padding-bottom: 100px;
     padding-top: 10px;
-  
 }
 
 /**Estilo para la cabecera*/
@@ -131,10 +130,12 @@ header {
 /**Estilos para los inputs*/
 .form-caja {
     position: relative;
+    overflow: hidden;
     margin-bottom: 20px;
     width: 100%;
     padding-right: 15px;
     box-sizing: border-box;
+    z-index: 0;
 }
 
     .form-caja input {
