@@ -1,45 +1,53 @@
 ﻿using ClubWebApp.Application.Dominio.DTOS;
 using ClubWebApp.Application.Dominio.Entities;
+using ClubWebApp.Application.Infraestructura.Filtros;
 using ClubWebApp.Application.Infraestructura.Services.Interfaz;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClubWebApp.Controllers
 {
     public class EventosController : Controller
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IEventosService _eventosService;
         private readonly IValidator<POSTCreadEventosDto> _validator;
-        public EventosController(IEventosService eventosService, IValidator<POSTCreadEventosDto> validator)
+        public EventosController(IHttpContextAccessor httpContextAccessor, IEventosService eventosService, IValidator<POSTCreadEventosDto> validator)
         {
+            _httpContextAccessor = httpContextAccessor;
             this._validator = validator;
             this._eventosService = eventosService;
         }
 
         [HttpGet]
+        [ServiceFilter(typeof(AuthFilter))]
         public async Task<IActionResult> Index()
         {
             return View(await _eventosService.GetEventosAsync());
         }
 
         [HttpGet]
-        public async Task<IActionResult> Cread()
+        [ServiceFilter(typeof(AuthFilter))]
+        public IActionResult Cread()
         {
 
             return View();
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(AuthFilter))]
         public async Task<IActionResult> Cread(POSTCreadEventosDto creadEventosDto)
         {
             try
             {
 
-                if (!ModelState.IsValid) 
+                if (!ModelState.IsValid)
                 {
                     return View(creadEventosDto);
                 }
+
 
                 try
                 {
@@ -66,7 +74,7 @@ namespace ClubWebApp.Controllers
                 //{
                 //    TempData["notice"] = "Error al registrar el evento. Revise la información proporcionada.";
                 //    return RedirectToAction("Cread");
-                
+
                 //}
 
                 //Validación del modelo
@@ -96,5 +104,32 @@ namespace ClubWebApp.Controllers
             }
         }
 
+
+        public IActionResult Deshboard()
+        {
+
+            try
+            {
+                var email = _httpContextAccessor.HttpContext.Session.GetString("email");
+
+                if (email == null)
+                    return RedirectToAction("Login");
+
+                ViewBag.Email = email;
+                return View();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public IActionResult Logout()
+        {
+            _httpContextAccessor.HttpContext.Session.Clear();
+            return RedirectToAction("Index");
+        }
     }
 }

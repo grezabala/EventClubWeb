@@ -1,4 +1,5 @@
 ﻿using ClubWebApp.Application.Dominio.Entities;
+using ClubWebApp.Models;
 
 namespace ClubWebApp.Application.Infraestructura.Services.Interfaz
 {
@@ -9,5 +10,7 @@ namespace ClubWebApp.Application.Infraestructura.Services.Interfaz
         Task<bool> IsCreadAsync(Clientes clientes);
         Task<bool> IsEditedAsync(int clienteId, Clientes clientes);
         Task<bool> IsDeletedAsync(int clienteId);
+        Task<Clientes> GetClientesRegistradoAsync(LoginViewModel loginViewModel);
+        Task<bool> IsExisteEmail(string email);
     }
 }

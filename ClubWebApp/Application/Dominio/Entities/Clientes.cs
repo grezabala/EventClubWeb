@@ -16,13 +16,14 @@ namespace ClubWebApp.Application.Dominio.Entities
         public DateTime FechaIngreso { get; set; }
         public string Activo { get; set; }
         public bool IsStatu { get; set; }
-        public bool IsDeletedBy { get; set; }
         public DateTime IsDeletedAt { get; set; }
+        public bool IsDeletedBy { get; set; }
+        public DateTime IsUpdatedAt { get; set; }
         public bool IsUpdatedBy { get; set; }
-        public bool IsUpdatedAt { get; set; }
+
 
         //parte del registro
-        public string Usuario { get; set; }
+        //public string Usuario { get; set; }
         public string PasswordUser { get; set; }
     }
 }

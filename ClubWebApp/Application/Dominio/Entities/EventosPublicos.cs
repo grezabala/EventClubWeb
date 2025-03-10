@@ -2,26 +2,23 @@
 
 namespace ClubWebApp.Application.Dominio.Entities
 {
-    public partial class Eventos
+    public class EventosPublicos
     {
         [Key]
-        public int EventoId { get; set; }
+        public int EventoPublicoId { get; set; }
         public int ClienteId { get; set; }
-        public string Codigo { get; set; }
-        public string Descripcion { get; set; }
-        public DateTime Fecha_Evento { get; set; }
-        public string Salon { get; set; }
-        public string Numero_Salon { get; set; }
-        public string Ubicacion { get; set; }
-        public int Cantidad_Personas { get; set; }
         public string Nombre { get; set; }
-        public string Estado { get; set; }
+        public string Lugar { get; set; }
+        public string Atracciones { get; set; }
+        public string Descripcion { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Tipo { get; set; }
+        public string Direccion { get; set; }
         public string HoraInicio { get; set; }
         public string HoraFinalizacion { get; set; }
         public DateTime IsDeletedAt { get; set; }
         public bool IsDeletedBy { get; set; }
         public DateTime IsUpdatedAt { get; set; }
         public bool IsUpdatedBy { get; set; }
-
     }
 }

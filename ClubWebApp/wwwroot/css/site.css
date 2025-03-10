@@ -165,14 +165,14 @@ header {
 }
 
 
-.sub-header {
+/*.sub-header {*/
     /*position: sticky;
     top: 0;
     background: #0671e4;*/ /*Fondo semitransparente */
     /*backdrop-filter: blur(2px);*/ /*Difuminar fondo */
     /*padding: 0px;
     z-index: 0;*/
-}
+/*}*/
 
     .sub-header li a {
         font-size: 18px;
@@ -198,7 +198,7 @@ header {
     top: 0;
     bottom: 20px;
     width: 980px;
-    /*    margin-right:-30px;*/
+    /*margin-right:-30px;*/
     padding-top: 30px;
     margin: 15px;
 }

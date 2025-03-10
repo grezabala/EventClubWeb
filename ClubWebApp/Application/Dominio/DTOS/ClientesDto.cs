@@ -13,7 +13,7 @@
         public DateTime FechaIngreso { get; set; }
 
         //Parte para iniciar sesión
-        public string Usuario { get; set; }
+        //public string Usuario { get; set; }
         public string PasswordUser { get; set; }
         public string ConfirmarPasswordUser { get; set; }
     }
@@ -31,7 +31,7 @@
         public DateTime FechaIngreso { get; set; }
 
         //Parte para iniciar sesión
-        public string Usuario { get; set; }
+        //public string Usuario { get; set; }
         public string PasswordUser { get; set; }
         public string ConfirmarPasswordUser { get; set; }
     }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ClubWebApp.Application.Dominio.DTOS;
 using ClubWebApp.Application.Infraestructura.Services.Interfaz;
+using ClubWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClubWebApp.Controllers
@@ -24,12 +25,12 @@ namespace ClubWebApp.Controllers
                 var _list = await _clientesService.GetClientesAsync();
                 var _listDto = new List<ClientesDto>();
 
-                foreach (var _cliente in _list) 
+                foreach (var _cliente in _list)
                 {
-                    _listDto.Add(_mapper.Map<ClientesDto>(_cliente));               
+                    _listDto.Add(_mapper.Map<ClientesDto>(_cliente));
                 }
 
-                if(_listDto == null)
+                if (_listDto == null)
                     return NotFound();
 
                 return View(_listDto);
@@ -43,7 +44,7 @@ namespace ClubWebApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Registrarse() 
+        public IActionResult Registrarse()
         {
 
             return View();
@@ -53,7 +54,48 @@ namespace ClubWebApp.Controllers
         public async Task<IActionResult> Registrarse(POSTClientesDto model)
         {
 
+            try
+            {
+                return View();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
             return View();
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest();
+
+                if (loginViewModel == null)
+                {
+                    ViewData["Mensajes"] = "No sé encontro ningún cliente registrado.";
+                    return View();
+
+                }
+       
+                await _clientesService.GetClientesRegistradoAsync(loginViewModel);
+                return RedirectToAction("Cread", "Eventos");
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

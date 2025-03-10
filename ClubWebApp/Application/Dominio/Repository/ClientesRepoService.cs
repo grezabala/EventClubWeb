@@ -1,6 +1,7 @@
 ﻿using ClubWebApp.Aplication.Dominio.Contexts;
 using ClubWebApp.Application.Dominio.Entities;
 using ClubWebApp.Application.Infraestructura.Services.Interfaz;
+using ClubWebApp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClubWebApp.Application.Dominio.Repository
@@ -100,7 +101,7 @@ namespace ClubWebApp.Application.Dominio.Repository
                 {
                     _getEdit.ClienteId = clienteId;
                     _getEdit.Codigo = clientes.Codigo;
-                   // _getEdit.Descripcion = clientes.Descripcion;
+                    // _getEdit.Descripcion = clientes.Descripcion;
                     _getEdit.FechaIngreso = clientes.FechaIngreso;
                     _getEdit.Cedula = clientes.Cedula;
                     _getEdit.Celular = clientes.Celular;
@@ -108,7 +109,7 @@ namespace ClubWebApp.Application.Dominio.Repository
                     _getEdit.Email = clientes.Email;
                     _getEdit.NombreCompleto = clientes.NombreCompleto;
                     _getEdit.Telefono = clientes.Telefono;
-                  
+
                     _context.Entry(_getEdit).State = EntityState.Modified;
 
                 }
@@ -121,6 +122,26 @@ namespace ClubWebApp.Application.Dominio.Repository
 
                 throw new Exception($"{_getException} {ex.Message}");
             }
+        }
+
+        public async Task<Clientes> GetClientesRegistradoAsync(LoginViewModel loginViewModel)
+        {
+            try
+            {
+                Clientes? clientes = await _context.Clientes.Where(c =>   c.Email == loginViewModel.Email && c.PasswordUser == loginViewModel.PasswordUser).FirstOrDefaultAsync();
+              
+                return clientes;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public Task<bool> IsExisteEmail(string email)
+        {
+            throw new NotImplementedException();
         }
 
         #region VARIABLE EXCEPTION

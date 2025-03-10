@@ -1,0 +1,35 @@
+﻿@model List<ClubWebApp.Application.Dominio.DTOS.EventosPublicosDto>
+
+<div class="container">
+    <div class="container-body">
+        <div class="contact-container">
+            <div class="card-header">
+                <h5 class="text-center">EVENTOS PUBLICOS AGENDADOS</h5>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var _eventosPlublico in Model)
+                    {
+                        <div class="container-event col-md-8">
+                            <div class="shadow-lg mb-5">
+                                <div class="card-body eventos-text">
+                                    <h5 class="card-title">@_eventosPlublico.Nombre</h5>
+                                    <p class="card-text">@_eventosPlublico.Lugar</p>
+                                    <p class="card-text">@_eventosPlublico.Atracciones</p>
+                                    <p class="card-text">@_eventosPlublico.Descripcion</p>
+                                    <p class="card-text">@_eventosPlublico.Fecha</p>
+                                    <p class="card-text">@_eventosPlublico.Tipo</p>
+                                    <p class="card-text">@_eventosPlublico.Direccion</p>
+                                    <p class="card-text">@_eventosPlublico.HoraInicio</p>
+                                    <p class="card-text">@_eventosPlublico.HoraFinalizacion</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+                <a class="" href="@Url.Action("Cread","EventosPublicos")">REGISTRAR UN NUEVO EVENTOS</a>
+            </div>
+        </div>
+    </div>
+</div>

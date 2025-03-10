@@ -23,7 +23,7 @@ namespace ClubWebApp.Aplication.Infraestructura.Helpers
         {
             services.AddDbContext<ClubWebApplicationDbContext>(sql =>
             {
-                sql.UseSqlServer(@"Data Source=(local); Initial Catalog=ClubAltamaria; Integrated Security=True; MultipleActiveResultSets=True; Encrypt=True; TrustServerCertificate=True",
+                sql.UseSqlServer(@"Data Source=(local); Initial Catalog=SistClubEventDb; Integrated Security=True; MultipleActiveResultSets=True; Encrypt=True; TrustServerCertificate=True",
                 sqlOpt =>
                 {
                     sqlOpt.EnableRetryOnFailure();

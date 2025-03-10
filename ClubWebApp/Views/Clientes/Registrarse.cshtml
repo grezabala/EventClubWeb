@@ -8,7 +8,6 @@
     <link href="~/css/styleform.css" rel="stylesheet" />
 </head>
 <body>
-
     <div class="row mt-5 justify-content-center">
         <div class="col-sm-8">
             <div class="card-body">
@@ -68,16 +67,9 @@
                                 </div>
                             </div>
                             <hr />
-                            <p class="text-center">CREAR UN USUARIO</p>
+                            <p class="text-center">CREAR UNA CONTRASEÑA PARA SU USUARIO</p>
                             <hr />
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="Usuario" class="form-control" placeholder="ej:event" required />
-                                        <label>Usuario</label>
-                                        <span asp-validation-for="Usuario" class="text-danger"></span>
-                                    </div>
-                                </div>
                                 <div class="form-group col-md-6">
                                     <div class="form-group form-caja">
                                         <input asp-for="PasswordUser" class="form-control" placeholder="Contraseña" required />
@@ -93,6 +85,29 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-footer text-center">
+                                <p class="bg-light" style="font-size:24px;">O regístrate con</p>
+                                <div class="social-login">
+                                    <a href="/signin-google" class="btn btn-danger">
+                                        <i class="fab fa-google" style="font-size:20px;"></i>
+                                        Google
+                                    </a>
+                                    <a href="/signin-facebook" class="btn btn-primary">
+                                        <i class="fab fa-facebook-f" style="font-size:20px;"></i>
+                                        Facebook
+                                    </a>
+                                    <a href="/signin-microsoft" class="btn btn-secondary">
+                                        <i class="fab fa-windows" style="font-size:20px;"></i>
+                                        Outlook
+                                    </a>
+                                    <a href="/signin-apple" class="btn btn-dark">
+                                        <i class="fab fa-apple" style="font-size:20px;"></i>
+                                         Apple
+                                    </a>
+                                </div>
+                                <br />
+
+                            </div>
                             <div class="card-footer">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-sm btn-success">
@@ -103,7 +118,7 @@
                                     </button>
                                     <br />
                                     <hr />
-                                    <a class="boton-enlace" href="@Url.Action("Login", "LoginClub")">INICIO DE SESION</a>
+                                    <a class="boton-enlace" href="@Url.Action("Login", "Clientes")">INICIO DE SESION</a>
                                 </div>
                             </div>
                         </form>
