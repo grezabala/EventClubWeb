@@ -20,19 +20,19 @@
             <div class="card-header text-center">
                 <h5>REGISTRAR EVENTO</h5>
             </div>
-            <div class="">
+            <div class="container-body">
                 <main>
-                    <form asp-action="Cread" method="post">
+                    <form asp-action="Cread" asp-controller="Eventos" method="post">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
+                        <div class="form-row input-group">
+                            <div class="form-group col-md-5">
                                 <div class="form-group form-caja">
                                     <input asp-for="Nombre" class="form-control" placeholder="Titulo" required />
                                     <label>Titulo</label>
                                     <span asp-validation-for="Nombre" class="text-danger"></span>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <div class="form-group form-caja">
                                     <input asp-for="ClienteId" class="form-control" placeholder="ID Cliente" required />
                                     <label>ID Cliente</label>
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row input-group">
                             <div class="form-group col-md-10">
                                 <div class="form-group form-caja">
                                     <input asp-for="Descripcion" class="form-control" placeholder="Descripción" required />
@@ -56,15 +56,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class=" form-group col-md-6">
+                        <div class="form-row input-group">
+                            <div class=" form-group col-md-5">
                                 <div class="form-group form-caja">
                                     <input asp-for="Numero_Salon" class="form-control" placeholder="Número del Salón" required />
                                     <label>Número del Salón</label>
                                     <span asp-validation-for="Numero_Salon" class="text-danger"></span>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <div class="form-group form-caja">
                                     <input asp-for="Salon" class="form-control" placeholder="Salón" required />
                                     <label>Salón</label>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row input-group">
                             <div class="form-group col-md-5">
                                 <div class="form-group form-caja">
                                     <input asp-for="Fecha_Evento" class="form-control" placeholder="Fecha del Evento" required data="Fecha_Evento" />
@@ -80,7 +80,7 @@
                                     <span asp-validation-for="Fecha_Evento" class="text-danger"></span>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <div class="form-group form-caja">
                                     <input asp-for="Cantidad_Personas" class="form-control" placeholder="Cantidad de Personas" required />
                                     <label>Cantidad de Personas</label>
@@ -89,11 +89,26 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-10">
                                 <div class="form-group form-caja">
                                     <input asp-for="Codigo" class="form-control" placeholder="Código" required />
                                     <label>Código</label>
                                     <span asp-validation-for="Codigo" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row input-group">
+                            <div class="form-group col-md-5">
+                                <div class="form-group form-caja">
+                                    <input asp-for="HoraInicio" class="form-control" placeholder="Hora de Inicio" required />
+                                    <label>Hora de Inicio</label>
+                                    <span asp-validation-for="HoraInicio" class="text-danger"></span>
+                                </div>
+                            </div> <div class="form-group col-md-5">
+                                <div class="form-group form-caja">
+                                    <input asp-for="HoraFinalizacion" class="form-control" placeholder="Hora de Finalización" required />
+                                    <label>Hora de Finalización</label>
+                                    <span asp-validation-for="HoraFinalizacion" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +125,6 @@
                                 <a class="boton-enlace" href="@Url.Action("Index", "Eventos")">VER EVENTO DISTPONIBLE</a>
                             </div>
                         </div>
-
                     </form>
                 </main>
             </div>

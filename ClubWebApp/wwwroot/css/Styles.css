@@ -4,9 +4,9 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.navbar {
-    padding: 1rem 2rem;
-}
+/*.navbar {
+    padding: 1rem 2rem;*/ /*COMENTADO EL 25/03/25*/
+/*}*/
 
 .navbar-brand {
     font-size: 1.5rem;
@@ -261,6 +261,15 @@ header {
     padding: 0;
     background-color: #f4f4f9;
     margin-bottom: 300px;
+}
+
+.contact-body-service {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    /*margin-bottom: 300px;*/
 }
 
 /*Header*/

@@ -2,6 +2,7 @@
 using ClubWebApp.Application.Dominio.DTOS;
 using ClubWebApp.Application.Infraestructura.Services.Interfaz;
 using ClubWebApp.Models;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClubWebApp.Controllers
@@ -10,11 +11,13 @@ namespace ClubWebApp.Controllers
     {
         private readonly IClientesService _clientesService;
         private readonly IMapper _mapper;
+        private readonly IValidator<POSTClientesDto> _validator;
 
-        public ClientesController(IClientesService clientesService, IMapper mapper)
+        public ClientesController(IClientesService clientesService, IMapper mapper, IValidator<POSTClientesDto> validator)
         {
             _clientesService = clientesService;
             _mapper = mapper;
+            _validator = validator;
         }
 
         [HttpGet]
@@ -51,17 +54,35 @@ namespace ClubWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Registrarse(POSTClientesDto model)
+        public async Task<IActionResult> Registrarse([FromBody] POSTClientesDto model)
         {
-
             try
             {
-                return View();
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var validationResult = await _validator.ValidateAsync(model);
+
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(validationResult.Errors);
+                }
+
+                if (!await _clientesService.IsCreadAsync(model))
+                {
+                    return Conflict(new { message = "Ya te encuentras registrado. Gracias por preferirnos." }); // Retorna un Conflict (409) con un mensaje JSON
+                }
+
+                return RedirectToAction("Index");
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                ViewData["Mensaje"] = "No fue posible registrarte";
+                return View();
             }
         }
 
@@ -86,7 +107,7 @@ namespace ClubWebApp.Controllers
                     return View();
 
                 }
-       
+
                 await _clientesService.GetClientesRegistradoAsync(loginViewModel);
                 return RedirectToAction("Cread", "Eventos");
 

@@ -1,0 +1,120 @@
+﻿@model ClubWebApp.Application.Dominio.DTOS.POSTEventosPublicosDto
+
+@{
+    ViewData["Title"] = "REGISTRAR EVENTO PUBLICO";
+}
+
+<head>
+    <link href="~/css/styleform.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row mt-5 justify-content-center">
+        <div class="col-sm-8">
+            <div class="card-body container-body">
+                <div class="card-header text-center">
+                    <h3 class="text-capitalize">REGISTRAR EVENTO PUBLICO</h3>
+                </div>
+                <div>
+                    <div>
+                        <main>
+                            <form asp-action="Cread" asp-controller="EventosPublicos" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-row input-group">
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Nombre" class="form-control" placeholder="Nombre o Titulo" required />
+                                            <label>Nombre o Titulo</label>
+                                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="ClienteId" class="form-control" placeholder="Cliente ID" required />
+                                            @*  <label>Cliente ID</label> *@
+                                            <span asp-validation-for="ClienteId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row input-group">
+                                    <div class="form-group col-md-5">
+                                        <div class="form-gruop form-caja">
+                                            <input asp-for="Lugar" class="form-control" placeholder="Lugar" required />
+                                            <label>Lugar</label>
+                                            <span asp-validation-for="Lugar" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Atracciones" class="form-control" placeholder="Atracciones" required />
+                                            <label>Atracciones</label>
+                                            <span asp-validation-for="Atracciones" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row input-group">
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Descripcion" class="form-control" placeholder="Descripción" required />
+                                            <label>Descripción</label>
+                                            <span asp-validation-for="Descripcion"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Fecha" class="form-control" placeholder="Fecha del Evento" required />
+                                            <label>Fecha del Evento</label>
+                                            <span asp-validation-for="Fecha" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row input-group">
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Tipo" class="form-control" placeholder="Tipo de Evento" required />
+                                            <label>Tipo de Evento</label>
+                                            <span asp-validation-for="Tipo" class="text-danger"></span>
+                                        </div>
+                                    </div> <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Direccion" class="form-control" placeholder="Dirección" required />
+                                            <label>Dirección</label>
+                                            <span asp-validation-for="Direccion" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row input-group">
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="HoraInicio" class="form-control" placeholder="Hora de Inicio" required />
+                                            <label>Hora de Inicio</label>
+                                            <span asp-validation-for="HoraInicio" class="text-danger"></span>
+                                        </div>
+                                    </div> <div class="form-group col-md-5">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="HoraFinalizacion" class="form-control" placeholder="Hora de Finalización" required />
+                                            <label>Hora de Finalización</label>
+                                            <span asp-validation-for="HoraFinalizacion" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-sm btn-success">
+                                            <i class="fa fa-save"> </i> Guardar
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
+                                            <i class="fa fa-ban"></i> Cancelar
+                                        </button>
+                                        <br />
+                                        <hr />
+                                        <a class="boton-enlace" href="@Url.Action("Index", "Eventos")">VER EVENTO DISTPONIBLE</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

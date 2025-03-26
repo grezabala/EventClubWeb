@@ -11,8 +11,6 @@ namespace ClubWebApp.Aplication.Dominio.Contexts
         public virtual DbSet<EventosPublicos> EventosPublicos { get; set; }
         public virtual DbSet<Eventos> Eventos { get; set; }
 
-
-
         #region Método Override DbContext
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
@@ -43,15 +41,16 @@ namespace ClubWebApp.Aplication.Dominio.Contexts
                 tb.Property(col => col.Celular).IsRequired().IsUnicode(false).HasMaxLength(30);
                 tb.Property(col => col.Email).IsRequired().IsUnicode(false).HasMaxLength(50);
                 tb.Property(col => col.Direccion).IsRequired().IsUnicode(false).HasMaxLength(250);
-                tb.Property(col => col.FechaIngreso).IsRequired().IsUnicode(false);
+                tb.Property(col => col.FechaIngreso).IsRequired().IsUnicode(false).HasColumnType("DateTime");
                 tb.Property(col => col.Activo).IsRequired().IsUnicode(false).HasMaxLength(10);
                 tb.Property(col => col.IsStatu).IsRequired().IsUnicode(false);
                 //tb.Property(col => col.Usuario).IsRequired().IsUnicode(false).HasMaxLength(50);
                 tb.Property(col => col.PasswordUser).IsRequired().IsUnicode(false).HasMaxLength(10);
                 tb.Property(col => col.IsDeletedBy).IsUnicode(false);
-                tb.Property(col => col.IsDeletedAt).IsUnicode(false);
+                tb.Property(col => col.IsDeletedAt).IsUnicode(false).HasColumnType("DateTime");
                 tb.Property(col => col.IsUpdatedBy).IsUnicode(false);
-                tb.Property(col => col.IsUpdatedAt).IsRequired().IsUnicode(false);
+                tb.Property(col => col.IsUpdatedAt).IsUnicode(false).HasColumnType("DateTime");
+                tb.HasQueryFilter(col => !col.IsDeletedBy);
 
             });
 
@@ -77,9 +76,9 @@ namespace ClubWebApp.Aplication.Dominio.Contexts
                 tb.Property(col => col.Direccion).IsRequired().IsUnicode(false).HasMaxLength(250);
                 tb.Property(col => col.HoraInicio).IsRequired().IsUnicode(false).HasMaxLength(20);
                 tb.Property(col => col.HoraFinalizacion).IsRequired().IsUnicode(false).HasMaxLength(20);
-                tb.Property(col => col.IsDeletedAt).IsUnicode(false);
+                tb.Property(col => col.IsDeletedAt).IsUnicode(false).HasColumnType("DateTime");
                 tb.Property(col => col.IsDeletedBy).IsUnicode(false);
-                tb.Property(col => col.IsUpdatedAt).IsUnicode(false);
+                tb.Property(col => col.IsUpdatedAt).IsUnicode(false).HasColumnType("DateTime");
                 tb.Property(col => col.IsUpdatedBy).IsUnicode(false);
 
             });
@@ -98,15 +97,18 @@ namespace ClubWebApp.Aplication.Dominio.Contexts
                 tb.Property(col => col.ClienteId).IsRequired().IsUnicode(false);
                 tb.Property(col => col.Codigo).IsRequired().IsUnicode(false).HasMaxLength(30);
                 tb.Property(col => col.Descripcion).IsRequired().IsUnicode(false).HasMaxLength(250);
-                tb.Property(col => col.Fecha_Evento).IsRequired().IsUnicode(false);
+                tb.Property(col => col.Fecha_Evento).IsRequired().IsUnicode(false).HasColumnType("DateTime");
                 tb.Property(col => col.Salon).IsRequired().IsUnicode(false).HasMaxLength(80);
                 tb.Property(col => col.Numero_Salon).IsRequired().IsUnicode(false).HasMaxLength(20);
                 tb.Property(col => col.Ubicacion).IsRequired().IsUnicode(false).HasMaxLength(100);
                 tb.Property(col => col.Cantidad_Personas).IsRequired().IsUnicode(false);
+                tb.Property(col => col.Nombre).IsRequired().IsUnicode(false).HasMaxLength(250);
+                tb.Property(col => col.HoraInicio).IsRequired().IsUnicode(false).HasMaxLength(20);
+                tb.Property(col => col.HoraFinalizacion).IsRequired().IsUnicode(false).HasMaxLength(20);
                 tb.Property(col => col.IsDeletedBy).IsUnicode(false);
-                tb.Property(col => col.IsDeletedAt).IsUnicode(false);
+                tb.Property(col => col.IsDeletedAt).IsUnicode(false).HasColumnType("DateTime");
                 tb.Property(col => col.IsUpdatedBy).IsUnicode(false);
-                tb.Property(col => col.IsUpdatedAt).IsRequired().IsUnicode(false);
+                tb.Property(col => col.IsUpdatedAt).IsUnicode(false).HasColumnType("DateTime");
                 tb.Property(col => col.Estado).IsRequired().IsUnicode(false).HasMaxLength(30);
 
             });

@@ -38,8 +38,8 @@ main {
     position: relative;
     z-index: 1;
     padding-bottom: -20px;
-    margin-top:55px;
-    margin-bottom:70px;
+    margin-top:150px !important;
+    margin-bottom:100px;
     margin-block:70px;
 }
 

@@ -1,4 +1,6 @@
-﻿using ClubWebApp.Application.Infraestructura.Services.Interfaz;
+﻿using ClubWebApp.Application.Dominio.DTOS;
+using ClubWebApp.Application.Infraestructura.Filtros;
+using ClubWebApp.Application.Infraestructura.Services.Interfaz;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClubWebApp.Controllers
@@ -18,9 +20,9 @@ namespace ClubWebApp.Controllers
             {
                 var list = await _eventosPublicos.GetEventosPublicosAsync();
 
-                if (list == null) 
+                if (list is null || !list.Any())
                 {
-                  return NotFound();
+                    return RedirectToAction("Service","Home");
                 }
 
                 return View(list);
@@ -31,6 +33,43 @@ namespace ClubWebApp.Controllers
                 throw;
             }
 
+        }
+
+        [HttpGet]
+        [ServiceFilter(typeof(AuthFilter))]
+        public IActionResult Cread()
+        {
+
+            return View();
+
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Cread(POSTEventosPublicosDto model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return NotFound("El formulario se envio vació");
+
+                if (model == null)
+                    return BadRequest(ModelState);
+
+                if (model.ClienteId > 0)
+                    return NotFound("Ingrese su ID para registrar su Evento correctamente.");
+
+                if (!await _eventosPublicos.IsCreadAsync(model))
+                    return RedirectToAction("Index");
+
+
+                return BadRequest(ModelState);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(505, ex);
+            }
 
         }
     }

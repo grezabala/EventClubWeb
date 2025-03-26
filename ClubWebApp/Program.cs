@@ -1,5 +1,6 @@
 using ClubWebApp.Aplication.Infraestructura.Helpers;
 using ClubWebApp.Application.Infraestructura.Filtros;
+using ClubWebApp.Application.Infraestructura.Helpers;
 using ClubWebApp.Application.Infraestructura.ValidatorEntities;
 using FluentValidation;
 
@@ -35,11 +36,7 @@ builder.Services.AddControllersWithViews();
 //Service Helpers
 builder.Services.ConnectionDbClubApplication(configuration);
 builder.Services.AddServiceCluApplication();
-
-//builder.Services.AddValidatorFromAssemblyContaining<EventosValidator>();
-//builder.Services.AddValidatorsFromAssemblyContanining(typeof(EventosValidator));
-
-//builder.Services.AddValidatorsFromAssemblyContaining<EventosValidator>();
+builder.Services.AddValidatorClubWebApp();
 
 //Validacion del modelo
 builder.Services.AddValidatorsFromAssemblyContaining<EventosValidator>();

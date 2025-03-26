@@ -25,7 +25,7 @@ namespace ClubWebApp.Application.Dominio.Repository
         {
             var list = new List<EventosPublicosDto>();
             using var cn = new SqlConnection(_connectionSqlServer.GetConexion());
-            using var cmd = new SqlCommand("", cn);
+            using var cmd = new SqlCommand("pro_SelectEventosPublicos", cn);
             try
             {
                 await cn.OpenAsync();
@@ -108,7 +108,7 @@ namespace ClubWebApp.Application.Dominio.Repository
         public async Task<bool> IsCreadAsync(POSTEventosPublicosDto pOST)
         {
             using var cn = new SqlConnection(_connectionSqlServer.GetConexion());
-            using var cmd = new SqlCommand("", cn);
+            using var cmd = new SqlCommand("pro_CreadEventosPublicos", cn);
             try
             {
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -133,6 +133,8 @@ namespace ClubWebApp.Application.Dominio.Repository
 
                 throw;
             }
+            finally { if (cn.State == ConnectionState.Open) cn.Close(); }
+       
         }
 
         public async Task<bool> IsDeletedAsync(int Id)
@@ -155,6 +157,7 @@ namespace ClubWebApp.Application.Dominio.Repository
 
                 throw;
             }
+            finally { if (cn.State == ConnectionState.Open) cn.Close(); }
         }
 
         public async Task<bool> IsEditedAsync(PUTEventosPublicosDto pUT)
@@ -182,12 +185,17 @@ namespace ClubWebApp.Application.Dominio.Repository
 
                 await cn.OpenAsync();
                 return await cmd.ExecuteNonQueryAsync() > 0;
+
+              
             }
             catch (Exception)
             {
 
                 throw;
             }
+            finally { if (cn.State == ConnectionState.Open) cn.Close(); }
+
+            
         }
     }
 }

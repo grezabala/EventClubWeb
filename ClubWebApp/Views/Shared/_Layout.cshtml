@@ -11,27 +11,49 @@
     <link rel="stylesheet" href="~/ClubWebApp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
     @* <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"> *@
-
+    @*ENLACE PARA EL MENU RESPONSIVE*@
+    <link href="~/css/menustyle.css" rel="stylesheet" />
+    @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> *@
+    <!--OPENG GRAPH-->
+    <meta property="og:title" content="EVENT - ORGANIZAMOS TU EVENTOS POR TI" />
+    <meta property="og:description" content="DINOS QUE DESEA Y NOSOTROS HACEMOS TU EVENTO REALIDA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta property="og:image" content="#" />
+    <meta property="og:site_name" content="EVENT" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid ">
+        <nav class="header-navbar navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 ">
+            <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color:rgba(0, 0, 0, .9) !important;">EVENT</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between topnav" id="myTopnav">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Index">PROXIMOS EVENTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Cread">EVENTO PRIVADO</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Cread">REGISTRAR REVENTO PRIVADO</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="#" asp-action="Index">EVENTO PUBLICO</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="EventosPublicos" asp-action="Index">EVENTO PUBLICO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Promocionales">EVENTOS PROMOCIONALES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="EventosPublicos" asp-action="Cread">REGISTRAR EVENTO PUBLICO</a>
                         </li>
                         <li>
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">NUESTRA FILOSOFIA</a>
@@ -43,12 +65,46 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Login">INICIAR SESION</a>
                         </li>
                     </ul>
-
-                </div>
+                    @*   <form class="d-flex" method="get" action="@Url.Action("Index","Home")">
+                    <input class="form-control name=" searchTerm" me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success" style="color:black;" type="submit">Buscar</button>
+                    </form> *@
+                  
             </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
         </nav>
     </header>
     <div class="container">
+        @*  <div class="card card-lados" style="width: 17.9rem">
+            <div class="card-body">
+                <h5 class="card-title">EVENTO PROMOCIONALES</h5>
+                <h6 class="card-subtitle mb-2 text-muted">PORQUE UN EVENTO NO TIENE QUE DEJAR DE SER ENTRETENIDO.</h6>
+                <p>No te lo puede perder, contara con la participacion de varios artitas del momento.</p>
+            </div>
+        </div> *@
+        @*  <div class="card" style="width: 18rem;">
+            <img src="#" alt=""  class="card-img-top"/>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div> *@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -82,36 +138,43 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
         <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-primary btn-social btn-facebook footer-icon">
-            <i class="fab fa-facebook-f"></i> Facebook
+            <i class="fab fa-facebook-f" style="font-size:25px;"></i> @* Facebook *@
         </a>
 
         <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-info btn-social btn-twitter footer-icon">
-            <i class="fab fa-twitter"></i> X
+            <i class="fab fa-twitter" style="font-size:25px;"></i> @* X *@
         </a>
 
         <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-danger btn-social btn-instagram footer-icon ">
-            <i class="fab fa-instagram"></i> Instagram
+            <i class="fab fa-instagram" style="font-size:25px;"></i> @* Instagram *@
         </a>
-
+        <!--Threads-->
+        <a href="https://www.threads.net" target="_blank" class="btn btn-outline-dark btn-social btn-threads footer-icon">
+            <i class="fab fa-threads" style="font-size:25px;"></i> @* Threads *@
+        </a>
         <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-primary btn-social btn-linkedin footer-icon">
-            <i class="fab fa-linkedin"></i> LinkedIn
+            <i class="fab fa-linkedin" style="font-size:25px;"></i> @* LinkedIn *@
         </a>
 
         <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-danger btn-social btn-youtube footer-icon">
-            <i class="fab fa-youtube"></i> YouTube
+            <i class="fab fa-youtube" style="font-size:25px;"></i> @* YouTube *@
         </a>
 
         <a href="https://www.tiktok.com" target="_blank" class="btn btn-outline-dark btn-social btn-tiktok footer-icon">
-            <i class="fab fa-tiktok"></i> TikTok
+            <i class="fab fa-tiktok" style="font-size:25px;"></i> @* TikTok *@
         </a>
 
         <a href="https://wa.me/" target="_blank" class="btn btn-outline-success btn-social btn-whatsapp footer-icon">
-            <i class="fab fa-whatsapp"></i> WhatsApp
+            <i class="fab fa-whatsapp" style="font-size:25px;"></i> @* WhatsApp *@
         </a>
 
         <!-- Pinterest -->
         <a href="https://www.pinterest.com" target="_blank" class="btn btn-outline-danger btn-social btn-pinterest footer-icon">
-            <i class="fab fa-pinterest"></i> Pinterest
+            <i class="fab fa-pinterest" style="font-size:25px;"></i> @* Pinterest *@
+        </a>
+
+        <a href="https://discord.com" target="_blank" class="btn btn-outline-dark btn-social btn-discord footer-icon">
+            <i class="fab fa-discord" style="font-size:25px;"></i> @* Discord *@
         </a>
         <hr />
         <!-- Agregar Font Awesome para los iconos -->
@@ -130,5 +193,16 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
 </html>

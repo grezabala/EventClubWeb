@@ -17,9 +17,6 @@ namespace ClubWebApp.Application.Infraestructura.Filtros
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            //var session = context.HttpContext.Session;
-            //var email = session.GetString("email");
-
             var email = _httpContextAccessor.HttpContext?.Session.GetString("email");
 
             if (string.IsNullOrEmpty(email))

@@ -1,4 +1,5 @@
 ﻿using ClubWebApp.Aplication.Dominio.Contexts;
+using ClubWebApp.Application.Dominio.DTOS;
 using ClubWebApp.Application.Dominio.Entities;
 using ClubWebApp.Application.Infraestructura.Services.Interfaz;
 using ClubWebApp.Models;
@@ -39,7 +40,7 @@ namespace ClubWebApp.Application.Dominio.Repository
             }
         }
 
-        public async Task<bool> IsCreadAsync(Clientes clientes)
+        public async Task<bool> IsCreadAsync(POSTClientesDto clientes)
         {
             try
             {
@@ -49,6 +50,8 @@ namespace ClubWebApp.Application.Dominio.Repository
                 if (clientes != null)
                 {
                     clientes.FechaIngreso = DateTime.Now;
+                    clientes.Codigo = $"EC{new Random().Next(2,999999)}CC";
+                    clientes.IsStatu = true;
 
                     await _context.AddAsync(clientes);
                 }

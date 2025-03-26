@@ -14,6 +14,8 @@ namespace ClubWebApp.Application.Dominio.DTOS
         public string Ubicacion { get; set; }
         public int Cantidad_Personas { get; set; }
         public string Nombre { get; set; }
+        public string HoraInicio { get; set; }
+        public string HoraFinalizacion { get; set; }
     }
 
     public partial class POSTCreadEventosDto
@@ -27,6 +29,8 @@ namespace ClubWebApp.Application.Dominio.DTOS
         public string Ubicacion { get; set; }
         public string Cantidad_Personas { get; set; }
         public string Nombre { get; set; }
+        public string HoraInicio { get; set; }
+        public string HoraFinalizacion { get; set; }
     }
 
     public partial class POSTUpdateEventosDto
@@ -41,6 +45,8 @@ namespace ClubWebApp.Application.Dominio.DTOS
         public string Ubicacion { get; set; }
         public string Cantidad_Persona { get; set; }                                                                                                                 
         public string Nombre { get; set; }
+        public string HoraInicio { get; set; }
+        public string HoraFinalizacion { get; set; }
     }
 
 

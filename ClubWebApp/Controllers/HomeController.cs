@@ -31,6 +31,19 @@ namespace ClubWebApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Service() 
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Promocionales()
+        {
+            return View();
+        
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

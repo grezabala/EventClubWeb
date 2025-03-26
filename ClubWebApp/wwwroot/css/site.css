@@ -18,7 +18,11 @@ html {
 }
 
 body {
+    width:100% !important;
     margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
 }
 /*NUEVO ESTILOS*/
 /* Estilo general para el header y el navbar */
@@ -112,6 +116,27 @@ body {
     }
 }
 
+/*------RESPONSIVE*/
+@media(min-width:768px) {
+    html {
+        width: 50%;
+    }
+
+    header {
+        width: 100%;
+    }
+}
+
+@media(min-width:1025px) {
+    html {
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+    }
+}
+
 /* Mejora de la accesibilidad */
 .navbar a:focus {
     outline: 3px solid #d9f7ff;
@@ -134,25 +159,23 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 100% !important;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
-    /* padding-bottom: -200px;
-    margin-bottom:10px;*/
 }
 
 /* Estilos del encabezado */
 header {
-    background-color: #4a90e2;
-    color: #fff;
-    font-size: 16px;
+   /* background-color: #4a90e2;
+    color: black;
+    font-size: 12px !important;*/
     padding: 1rem 0;
     position: fixed;
     overflow: hidden;
-    width: 100%;
+    /*width: 100%;
     text-align: center !important;
-    text-align: right;
+    text-align: right;*/
 }
 
 .sub-header {
@@ -162,17 +185,9 @@ header {
     text-transform: full-width;
     padding: 1rem 0;
     width: 100%;
+    margin-top: 170px;
+    /*position:relative;*/
 }
-
-
-/*.sub-header {*/
-    /*position: sticky;
-    top: 0;
-    background: #0671e4;*/ /*Fondo semitransparente */
-    /*backdrop-filter: blur(2px);*/ /*Difuminar fondo */
-    /*padding: 0px;
-    z-index: 0;*/
-/*}*/
 
     .sub-header li a {
         font-size: 18px;
@@ -186,7 +201,7 @@ header {
 
 
 .container-body {
-    margin-top: 120px;
+    margin-top: 155px;
     margin-bottom: 70px;
     top: 0;
     bottom: 20px;
@@ -198,13 +213,12 @@ header {
     top: 0;
     bottom: 20px;
     width: 980px;
-    /*margin-right:-30px;*/
     padding-top: 30px;
     margin: 15px;
 }
 
 section {
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .navbar {
@@ -212,6 +226,52 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+}
+
+.header-navbar {
+    font-size: 14px !important;
+    height: 55px;
+    vertical-align: middle;
+    margin-block: 10px;
+    top: 0;
+    margin: 0px;
+    text-align: justify;
+}
+
+/*Responsive para la pantalla Moviles*/
+@media (max-width: 480px) {
+    .header-navbar {
+        font-size: 12px;
+        height: 40px;
+        margin-block: 5px;
+    }
+}
+
+/*Pantalla mediana tables*/
+@media (max-width:481px) {
+    .header-navbar {
+        font-size: 13px;
+        height: 45px;
+        margin-block: 5px;
+    }
+}
+
+/* Pantallas grandes (desktops) */
+@media (min-width: 769px) {
+    .header-navbar {
+        font-size: 14px;
+        height: 50px;
+        margin-block: 10px;
+    }
+}
+
+/*Laptop*/
+@media (max-width:1351px 76px) {
+    .header-navbar {
+        font-size: 12px;
+        height: 40px;
+        margin-block: 5px;
+    }
 }
 
 .navbar-brand {
@@ -298,7 +358,8 @@ h1 {
 
 /* Footer */
 footer {
-    background-color: #4a90e2;
+    background: linear-gradient(135deg, #4a90e2, #50c9ce);
+    /*background-color: #e6eef1;*/ /*#4a90e2*/
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -548,42 +609,64 @@ tbody tr:hover {
 .btn-facebook:hover {
     background-color: #1877F2 !important;
     border-color: #1877F2 !important;
+    font-size: 25px;
 }
 
 .btn-twitter:hover {
     background-color: #1DA1F2 !important;
     border-color: #1DA1F2 !important;
+    font-size: 25px;
 }
 
 .btn-instagram:hover {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
     border-color: #dc2743 !important;
+    font-size: 25px;
 }
 
 .btn-linkedin:hover {
     background-color: #0077B5 !important;
     border-color: #0077B5 !important;
+    font-size: 25px;
+}
+
+.btn-discord:hover {
+    background-color: #0077B5 !important;
+    border-color: #0077B5 !important;
+    font-size: 25px;
 }
 
 .btn-youtube:hover {
     background-color: #FF0000 !important;
     border-color: #FF0000 !important;
+    font-size: 25px;
 }
 
 .btn-tiktok:hover {
     background-color: #000000 !important;
     border-color: #000000 !important;
+    font-size: 25px;
+}
+
+.btn-threads:hover {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    font-size: 25px;
+    border-radius: 30px;
 }
 
 .btn-whatsapp:hover {
     background-color: #25D366 !important;
     border-color: #25D366 !important;
+    font-size: 25px;
 }
 
 /* Nuevo: Estilo para Pinterest */
 .btn-pinterest:hover {
     background-color: #E60023 !important;
     border-color: #E60023 !important;
+    font-size: 25px;
+    border-radius: 30px;
 }
 
 /* Estilos generales del pie de página */
@@ -606,12 +689,14 @@ tbody tr:hover {
     color: #007bff; /* Azul Bootstrap por defecto */
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    text-decoration: none;
 }
 
     /* Cambio de color y efecto al pasar el mouse */
     .footer-contact-link:hover {
         color: #00c96d !important; /* Verde brillante */
-        text-decoration: underline;
+        text-decoration: blink;
+        font-size: 30px !important;
     }
 
     /* Efecto en el icono de contacto */
@@ -639,20 +724,20 @@ tbody tr:hover {
 /*CSS FORMULARIO LOGIN*/
 
 .form-login {
-    margin-top:10px;
-    bottom:-70px !important;
-    margin-bottom:100px;
+    margin-top: 10px;
+    bottom: -70px !important;
+    margin-bottom: 100px;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    margin:40px;
+    margin: 40px;
     overflow: hidden;
     z-index: 1000;
-    top:-10px;
+    top: -10px;
     display: flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .form-login-container {
@@ -663,29 +748,143 @@ tbody tr:hover {
 }
 
 .login-floating input {
-    border:none;
-    border-bottom:2px solid #ccc;
-    border-radius:0;
-    padding-left:10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    padding-left: 10px;
     transition: all 0.3s ease-in-out;
 }
 
     .login-floating input:focus {
         border-bottom: 2px solid #007bff;
-        outline:none;
-        box-shadow:none;
+        outline: none;
+        box-shadow: none;
     }
 
-    /*Botones de inicio de sesion*/
+/*Botones de inicio de sesion*/
 .login-btn {
-    background-color:#007bff;
-    border:none;
+    background-color: #007bff;
+    border: none;
     transition: all 0.3s ease-in-out;
 }
 
     .login-btn:hover {
-        background-color:#0056b3;
-        transform:scale(1.05);
+        background-color: #0056b3;
+        transform: scale(1.05);
     }
 
+/*ESTILO PARA LOS CARD QUE ESTAN A LOS LADOS*/
+.card-lados {
+    top: 0;
+    margin: 20px;
+    height: 400px;
+    padding: 12px;
+    background: #46eae5de !important;
+    margin-top: 200px !important;
+    overflow: auto;
+    float: right;
+    left: 300px !important;
+    margin-bottom: 200px;
+}
 
+/*GALERIA*/
+/*.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0 !important;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+    list-style: none;
+}*/
+
+
+.galeria {
+    display: grid;
+    gap: 15px;
+    object-fit: cover;
+    position: relative;
+    /*   width: 100%;*/
+    /* object-fit: cover;
+    padding: 1vw;*/
+}
+
+.galeria-section {
+    margin: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    position: initial;
+    object-fit: cover;
+    overflow: hidden;
+    top: 5px;
+    z-index: -1;
+}
+
+.galeria img {
+    max-height: 440px;
+    object-fit: cover;
+    height: 540px;
+    left: 0px;
+    border-radius: 8px;
+    top: 40px !important;
+    overflow: hidden !important;
+    text-align: center !important;
+    margin-top: 1px;
+    bottom: -23px !important;
+    margin-bottom: -1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*  z-index: -1;*/
+    /*width: 90% !important;
+        height: 900px;
+        padding: 10px;
+        max-height: 435px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        margin-bottom: 1rem;*/
+    /*   z-index:0;*/
+    /*margin-right: 10px;
+        background-size: cover;
+        background-position: center center;*/
+    /* ;
+       
+     
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin:auto;*/
+    /* max-height:-450px;*/
+    /*  max-width: 100%;
+        padding: 10px;
+        height: 350px;
+        float: left;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+        display:flex;*/
+}
+
+@media only screen and (max-width: 480px) {
+    .galeria img {
+        width: 100%;
+    }
+}
+
+/*.galeria img:hover {
+            transform:scale(1.05);
+        }*/
+.carrusel {
+    color: #fff !important;
+    /* font-family: Arial, Helvetica, sans-serif;*/
+    font-family: 18px !important;
+}
+
+    .carrusel h5 {
+        font-family: 20px !important;
+    }

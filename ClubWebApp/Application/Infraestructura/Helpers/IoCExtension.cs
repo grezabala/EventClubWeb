@@ -1,5 +1,6 @@
 ﻿using ClubWebApp.Aplication.Dominio.Contexts;
 using ClubWebApp.Aplication.Dominio.Data.DbConnectionSql;
+using ClubWebApp.Application.Dominio.Entities;
 using ClubWebApp.Application.Dominio.Repository;
 using ClubWebApp.Application.Infraestructura.Mappers;
 using ClubWebApp.Application.Infraestructura.Services.Interfaz;
@@ -50,17 +51,16 @@ namespace ClubWebApp.Aplication.Infraestructura.Helpers
 
             services.AddScoped<IEventosService, EventosRepoService>();
             services.AddScoped<IClientesService, ClientesRepoService>();
-
-
+            services.AddScoped<IEventosPublicos, EventosPublicosRepoService>();
 
             //services.AddValidatorFromAssemblyContaining<EventosValidator>();
             //services.AddValidatorsFromAssemblyContanining(typeof(EventosValidator));
             services.AddScoped<ConnectionSqlServer>();
 
-
-
             return services;
 
         }
+
+        
     }
 }
