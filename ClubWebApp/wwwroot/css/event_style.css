@@ -1,0 +1,589 @@
+﻿/*VARIABLES GLOBALES*/
+:root {
+    --color-amarillo-intenso: #ffc107;
+    --color-azul: #1a73e8;
+    --color-azul-corporativo: #0077B5;
+    --color-azul-palido: #d9f7ff;
+    --color-azul-primario: #007bff;
+    --color-azul-brillante: #4a90e2;
+    --color-azul-muy-palido: #0F8FF;
+    --color-blanco: #ffffff;
+    --color-background: linear-gradient(135deg, #4a90e2, #50c9ce);
+    --color-claro: #ededed;
+    --color-gris: #b4b4b4;
+    --color-gris-antracita: #333;
+    --color-gris-muy-palido: #f8f9fa;
+    --color-gris-claro-estandar: #dddddd;
+    --colo-gris-grisaceo: #f0f0f0;
+    --color-gris-grisaceo-palido: #eee;
+    --color-gris-neutro: #999999;
+    --color-negro: #202124;
+    --color-negro-negro: #000000;
+    --color-rojo-brillante: #dc3545;
+    --color-verde-esmeralda: #00c96d;
+    --color-verde-primavera: #28a745;
+}
+
+:root {
+    --fuente-general: Arial, Helvetica, sans-serif;
+    --fuente-sub-general: Times New Roman, Times, serif;
+}
+
+/*NUEVO CSS PARA EL MENU NAVBAR PRICIPAR*/
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*form {
+    width:100%;
+}*/
+
+/*Contenedor del formulario flexible */
+.form-row {
+    display: flex;
+    flex-wrap: wrap; /*Permite que los elementos se ajusten */
+    /*    justify-content: space-between;*/
+    margin-bottom: 15px;
+}
+
+/* Asegurar que los campos del formulario sean responsivos */
+/*.form-group {
+    flex: 1;
+    min-width: 280px;*/ /*Evita que se vuelvan demasiado pequeños */
+/*margin: 5px;
+}*/
+
+.header-navbar {
+    font-size: 14px;
+    height: auto;
+    margin: auto;
+}
+
+    .header-navbar:hover {
+        text-decoration: none;
+    }
+
+    .header-navbar li a:hover {
+        font-size: 18px;
+        color: var(--color-azul-corporativo) !important;
+        cursor: pointer;
+        background-color: var(--colo-gris-grisaceo);
+        border: 1px solid var(--color-gris-grisaceo-palido);
+        border-radius: 8px;
+        transition: box-shadow 0.2s ease-in-out;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--color-blanco);
+    text-transform: uppercase;
+}
+
+.navbar-ul {
+    font-family: var(--fuente-general);
+    font-size: 16px;
+    color: var(--color-blanco) !important;
+}
+
+    .navbar-ul li a:hover {
+        text-decoration: blink;
+        font-size: 18px;
+        cursor: pointer;
+        /*background-color: var(--color-azul);*/
+        /*  color: var(--color-blanco);*/
+        border-radius: 8px;
+        border: 1px solid;
+        transition: box-shadow 0.2s ease-in-out;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+/*Toca hacer de Batman de nuevo para recordar porque siempre debemos tener esa oscuridad */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0;
+}
+
+.container-body {
+    margin-top: 40px;
+}
+
+.contect-form {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+    .contect-form button[type=submit] {
+        background-color: #04AA6D;
+        color: var(--color-blanco);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+        .contect-form button[type=submit]:hover {
+            background-color: #45e049;
+        }
+
+.sub-header {
+    background: linear-gradient(135deg, #4a90e2, #50c9ce);
+    text-transform: full-width;
+    padding: 1rem 0;
+    width: 100%;
+    margin-top: -0px;
+    margin: 10px 0;
+}
+
+/*class hero container*/
+.hero {
+    background-color: var(--color-azul-palido);
+    text-align: center;
+    padding: 4rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/*codigo css para los section de promociones de los tipos de eventos que organizamos*/
+.event-section {
+    background-color: var(--color-blanco);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .event-section h2 {
+        color: var(--color-azul-brillante);
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .event-section .event-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    .event-section article {
+        margin-top: 1rem;
+    }
+
+    .event-section ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+    }
+
+.card-header {
+    background: var(--color-gris-antracita);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+/*Efecto hover en las filas*/
+.btn {
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+/*btn editar*/
+.btn-outline-warning {
+    color: var(--color-amarillo-intenso);
+    border-color: var(--color-amarillo-intenso);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .btn-outline-warning:hover {
+        background-color: var(--color-amarillo-intenso);
+        color: var(--color-blanco);
+    }
+
+/*btn eliminar*/
+.btn-outline-danger {
+    color: var(--color-rojo-brillante);
+    border-color: var(--color-rojo-brillante);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .btn-outline-danger:hover {
+        background-color: var(--color-rojo-brillante);
+        color: var(--color-blanco);
+    }
+
+.btn-social {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+    .btn-social:hover {
+        transform: scale(1,1);
+        color: var(--color-blanco);
+    }
+
+/* Colores personalizados por red social */
+.btn-discord:hover {
+    background-color: var(--color-azul-corporativo);
+    border-color: var(--color-azul-corporativo);
+    font-size: 25px;
+}
+
+.btn-threads:hover {
+    background-color: var(--color-negro-negro);
+    border-color: var(--color-negro-negro);
+    font-size: 25px;
+    border-radius: 30px;
+}
+
+/*Estilos para los Card*/
+/*.card {
+    top: 0;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: var(--color-blanco);
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0px auto;
+    align-content: center;
+    margin-bottom: 95px;
+    left: 60px;
+    z-index: 1000;
+    overflow-y: hidden;
+    position: relative;
+    max-width: 1200px;
+}*/
+
+/*.card-body {
+    background: var(--color-blanco);
+    padding: 20px;
+    width: 1500px !important;
+    left: -155px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    padding-bottom: -20px;
+    margin-top: -30px !important;
+    margin-bottom: 100px;
+    margin-block: 70px;
+}*/
+
+/*.card-main {
+    margin-top: 150px;
+    top: 0px;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 100px;
+    padding-top: 10px;
+}*/
+
+/**Estilo para la cabecera*/
+.card-header {
+    background: linear-gradient(45deg, #62b6eb, #218838);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/*Estilos para los inputs*/
+.form-caja {
+    /*  position: relative;*/
+    /*  margin-right: -15px;*/
+    /**/ height: 40px;
+    /**/ width: 100%;
+    margin-block: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0 60px;
+    margin: auto;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 20px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    z-index: 0;
+    left: 110px;
+    margin-block: 10px; /*Para hacer los fomulario responsive*/
+}
+
+    .form-caja input,
+    .form-caja textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid var(--color-gris);
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .form-caja input {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 10px;
+        font-size: 15px;
+        border: 2px solid var(--color-gris-claro-estandar);
+        border-radius: 5px;
+        outline: none;
+        background: transparent;
+        transition: 0.3s ease-in-out;
+    }
+
+        .form-caja input:focus {
+            border-color: var(--color-verde-primavera);
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+        }
+
+    .form-caja label {
+        position: absolute;
+        top: 50%;
+        left: 12.4px;
+        transform: translateY(-50%);
+        background: var(--color-blanco);
+        padding: 0 5px;
+        color: var(--color-gris-neutro);
+        font-size: 14px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .form-caja input:focus + label,
+    .form-caja input:not(:placeholder-shown) + label {
+        top: 0;
+        font-size: 12px;
+        color: #28a745;
+    }
+
+/* Para pantallas pequeñas (ej. móviles)*/
+@media (max-width: 480px) {
+    .form-caja {
+        max-width: 90%;
+    }
+
+        .form-caja input,
+        .form-caja textarea {
+            font-size: 14px;
+            padding: 10px;
+        }
+}
+
+/*Nuevo media queries*/
+@media (max-width:768px) {
+    .col-sm-8 {
+        width: 95%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+@media (max-width:480px) {
+    .card-header {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .bth {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .boton-enlace {
+        font-size: 14px;
+    }
+}
+
+
+/*@media (max-width:1024px) {
+    .container {
+        width:95%;
+    }
+}
+
+@media (max-width:768px) {
+    main {
+        flex-direction:column !important;
+        align-items:center;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    main {
+        padding:10px;
+    }
+
+    footer {
+        padding:10px;
+    }
+}*/
+
+/*CSS FOOTER*/
+.footer {
+    background: linear-gradient(135seg, #4a90e2, #50c9ce);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: -22px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: static !important;
+}
+
+/*ICONO FOOTER*/
+.footer-icon {
+    bottom: 10px;
+    font-size: 12px;
+    font-family: var(--fuente-general);
+}
+
+.footer-contacto {
+    color: var(--color-azul-muy-palido);
+    padding: 12px;
+    bottom: 10px;
+    font-size: 14px;
+    font-family: var(--fuente-general);
+}
+
+.footer-div {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--color-gris-muy-palido);
+    border-top: 2px solid var(--color-gris-claro-estandar);
+}
+
+.footer-p {
+    font-size: 20px;
+    color: var(--color-gris-antracita);
+    margin: 0;
+}
+
+/*CSS PARA LOS ENLACES DE CONTACTO EN EL FOOTER*/
+.footer-contact-link {
+    text-decoration: none;
+    color: var(--color-azul-primario);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+/*EventClubWeb*/
+    .footer-contact-link:hover {
+        background-color: var(--color-azul-corporativo);
+        color: var(--color-verde-esmearalda);
+        text-decoration: blink;
+        font-size: 20px;
+        margin:auto;
+        height:5px;
+        padding:8px;
+        border-radius:20px;
+    }
+
+    .footer-contact-link i {
+        margin-right: 5px;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    /* Pequeño zoom y cambio de color en el icono al pasar el mouse */
+    .footer-contact-link:hover i {
+        transform: scale(1.2);
+        color: var(--color-verde-esmeralda) !important;
+    }
+
+    /*SOLUCIÓN: Forzar el color al hacer hove */
+    .footer-contact-link:hover,
+    .footer-contact-link:hover i {
+        color: var(--color-verde-esmearalda) !important; /* Verde brillante o esmeraalda */
+    }
+
+        /* Pequeño zoom y cambio de color en el icono al pasar el mouse */
+        .footer-contact-link:hover i {
+            transform: scale(1.2);
+        }
+
+/*Botones footer*/
+.card-footer {
+    text-align: center;
+    padding: 15px;
+    padding-top: 10px;
+}
+
+    .card-footer .bth {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        transition: 0.3s ease-in-out;
+    }
+
+.form-footer {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form-footer-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.form-footer-column {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.form-footer h4 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}

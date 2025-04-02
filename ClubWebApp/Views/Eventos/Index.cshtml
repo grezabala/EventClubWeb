@@ -1,8 +1,8 @@
 ﻿@model List<ClubWebApp.Application.Dominio.DTOS.EventosDto>
 
-<!DOCTYPE html>
-<html>
-<head>
+
+
+<div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Codigo para mostrar los eventos por la fecha-->
@@ -14,133 +14,121 @@
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
     </style>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos Especiales - CLUB EVENT</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="~/css/MenuStyle.css" rel="stylesheet" />
-</head>
-<body>
-
-    <main class="container">
-        <div class="container-body">
-            <div class="contact-container">
-                <div class="card-header">
-                    <h5 class="text-center">NUESTROS EVENTOS</h5>
-                </div>
-                <div class="">
-                    <div class="row">
-                        @foreach (var _eventos in Model)
-                        {
-                            <div class="container-event  col-md-8">
-                                <div class="shadow-lg mb-5">
-                                    <div class="card-body eventos-text ">
-                                        <h5 class="card-title">@_eventos.Nombre</h5>
-                                        <p class="card-text">Fecha del Evento: @_eventos.Fecha_Evento</p>
-                                        <p class="card-text">Asistentes: @_eventos.Cantidad_Personas Personas</p>
-                                        <p class="card-text">No Salón: @_eventos.Numero_Salon</p>
-                                        <p class="card-text">Ubicación: @_eventos.Ubicacion</p>
-                                        <p class="card-text">Salón: @_eventos.Salon</p>
-                                        <p class="card-text">Descripción: @_eventos.Descripcion</p>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        }
-                    </div>
-                    <a class="boton-enlace" href="@Url.Action("Cread", "Eventos")">REGISTRAR EVENTO</a>
-                </div>
+</div>
+<main class="container">
+    <div class="container-body">
+        <div class="contact-container">
+            <div class="card-header">
+                <h5 class="text-center">NUESTROS EVENTOS</h5>
             </div>
-            <br />
-            <hr />
+            <div class="">
+                <div class="row">
+                    @foreach (var _eventos in Model)
+                    {
+                        <div class="container-event  col-md-8">
+                            <div class="shadow-lg mb-5">
+                                <div class="card-body eventos-text ">
+                                    <h5 class="card-title">@_eventos.Nombre</h5>
+                                    <p class="card-text">Fecha del Evento: @_eventos.Fecha_Evento</p>
+                                    <p class="card-text">Asistentes: @_eventos.Cantidad_Personas Personas</p>
+                                    <p class="card-text">No Salón: @_eventos.Numero_Salon</p>
+                                    <p class="card-text">Ubicación: @_eventos.Ubicacion</p>
+                                    <p class="card-text">Salón: @_eventos.Salon</p>
+                                    <p class="card-text">Descripción: @_eventos.Descripcion</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+                <a class="boton-enlace" href="@Url.Action("Cread", "Eventos")">REGISTRAR EVENTO</a>
+            </div>
         </div>
+        <br />
+        <hr />
+    </div>
 
-    </main>
+</main>
 
-    @if (TempData["AlertMessage"] != null)
-    {
-        <script>
-            $(function () {
-                Swal.fire({
-                    title: '¡Éxito!',
-                    text: '@TempData["AlertMessage"]',
-                    icon: 'success',
-                    confirmButtonText: 'Aceptar'
-                });
+@if (TempData["AlertMessage"] != null)
+{
+    <script>
+        $(function () {
+            Swal.fire({
+                title: '¡Éxito!',
+                text: '@TempData["AlertMessage"]',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
             });
-        </script>
-    }
+        });
+    </script>
+}
 
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <script>
-            $(function () {
-                Swal.fire({
-                    title: 'Error!',
-                    text: '@TempData["ErrorMessage"]',
-                    icon: 'warning',
-                    confirmButtonText: 'Aceptar'
-                });
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        $(function () {
+            Swal.fire({
+                title: 'Error!',
+                text: '@TempData["ErrorMessage"]',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
             });
-        </script>
+        });
+    </script>
 
-    }
+}
 
-    @section Scripts {
+@section Scripts {
 
-        <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial" />
 
-        <script src="~/js/showmodal.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
-        <script>
-            $(document).ready(function () {
-                $('#producto').DataTable({
-                    "language": {
-                        url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                    },
-                });
-            });
-        </script>
-
-        <script>
-            sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/Productos/Delete/', false);
-        </script>
-    }
+    <script src="~/js/showmodal.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let eventos = Array.from(documen.querySelectorAll(".evento"));
-
-            //Ordenar los eventos por la fecha
-            eventos.sort((a, b) => {
-                let fechaA = new Date(a.getAttribute("date-fecha"));
-                let fechaB = new Date(b.getAttribute("date-fecha"));
-                return fechaA - fechaB;
-
+        $(document).ready(function () {
+            $('#producto').DataTable({
+                "language": {
+                    url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                },
             });
+        });
+    </script>
 
-            let tbody = document.getElementById("eventos-tbody");
-            tbody.innerHTML = "";
-            eventos.forEach(evento => tbody.appendChild(evento));
+    <script>
+        sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/Productos/Delete/', false);
+    </script>
+    }
 
-            eventos.forEach((evento, index) => {
-                setTimeout(() => {
-                    evento.style.opacity = "1";
-                    evento.style.transform = "translateY(0)";
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let eventos = Array.from(documen.querySelectorAll(".evento"));
 
-                }, index * 500);
-
-            });
+        //Ordenar los eventos por la fecha
+        eventos.sort((a, b) => {
+            let fechaA = new Date(a.getAttribute("date-fecha"));
+            let fechaB = new Date(b.getAttribute("date-fecha"));
+            return fechaA - fechaB;
 
         });
 
-    </script>
+        let tbody = document.getElementById("eventos-tbody");
+        tbody.innerHTML = "";
+        eventos.forEach(evento => tbody.appendChild(evento));
 
-</body>
-</html>
+        eventos.forEach((evento, index) => {
+            setTimeout(() => {
+                evento.style.opacity = "1";
+                evento.style.transform = "translateY(0)";
 
+            }, index * 500);
+
+        });
+
+    });
+
+</script>
 
 

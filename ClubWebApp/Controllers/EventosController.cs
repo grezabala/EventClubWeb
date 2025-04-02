@@ -22,14 +22,14 @@ namespace ClubWebApp.Controllers
         }
 
         [HttpGet]
-        [ServiceFilter(typeof(AuthFilter))]
+        //[ServiceFilter(typeof(AuthFilter))]
         public async Task<IActionResult> Index()
         {
             return View(await _eventosService.GetEventosAsync());
         }
 
         [HttpGet]
-        [ServiceFilter(typeof(AuthFilter))]
+        //[ServiceFilter(typeof(AuthFilter))]
         public IActionResult Cread()
         {
 
@@ -37,7 +37,7 @@ namespace ClubWebApp.Controllers
         }
 
         [HttpPost]
-        [ServiceFilter(typeof(AuthFilter))]
+        //[ServiceFilter(typeof(AuthFilter))]
         public async Task<IActionResult> Cread(POSTCreadEventosDto creadEventosDto)
         {
             try

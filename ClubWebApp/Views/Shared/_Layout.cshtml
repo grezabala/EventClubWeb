@@ -6,15 +6,13 @@
     <title>@ViewData["Title"] Event</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/Styles.css" asp-append-version="true" />
-    @*  <link href="/assets-old/css/material-dashboard.min.css?v=2.1.2" rel="stylesheet" /> *@
+    <!--link event_style.css-->
+    <link rel="stylesheet" href="~/css/event_style.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="/css/event_reponsive.css" asp-append-version="true" /> *@
     <link rel="stylesheet" href="~/ClubWebApp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
-    @* <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"> *@
     @*ENLACE PARA EL MENU RESPONSIVE*@
     <link href="~/css/menustyle.css" rel="stylesheet" />
-    @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> *@
     <!--OPENG GRAPH-->
     <meta property="og:title" content="EVENT - ORGANIZAMOS TU EVENTOS POR TI" />
     <meta property="og:description" content="DINOS QUE DESEA Y NOSOTROS HACEMOS TU EVENTO REALIDA" />
@@ -34,12 +32,6 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between topnav" id="myTopnav">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                                <i class="fa fa-bars"></i>
-                            </a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Index">PROXIMOS EVENTOS</a>
                         </li>
@@ -65,22 +57,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Login">INICIAR SESION</a>
                         </li>
                     </ul>
-                    @*   <form class="d-flex" method="get" action="@Url.Action("Index","Home")">
-                    <input class="form-control name=" searchTerm" me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-success" style="color:black;" type="submit">Buscar</button>
-                    </form> *@
-                  
-            </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
                 </div>
+
+            </div>
+
         </nav>
     </header>
     <div class="container">
@@ -110,7 +90,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted" style="margin-bottom:-140px;">
+    <footer class="border-top footer text-muted" style="margin-bottom:-3900px;">
         <style>
             a {
                 text-decoration: none;
@@ -148,10 +128,10 @@
         <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-danger btn-social btn-instagram footer-icon ">
             <i class="fab fa-instagram" style="font-size:25px;"></i> @* Instagram *@
         </a>
-        <!--Threads-->
+        <!--Threads
         <a href="https://www.threads.net" target="_blank" class="btn btn-outline-dark btn-social btn-threads footer-icon">
             <i class="fab fa-threads" style="font-size:25px;"></i> @* Threads *@
-        </a>
+        </a>-->
         <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-primary btn-social btn-linkedin footer-icon">
             <i class="fab fa-linkedin" style="font-size:25px;"></i> @* LinkedIn *@
         </a>

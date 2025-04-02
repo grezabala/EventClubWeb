@@ -1,26 +1,26 @@
-﻿body {
-}
+﻿/*body {
+}*/
 
 /* Estilos generales del menú */
-.sub-header {
+/*.sub-header {
     position: sticky;
     top: 0;
     width: 100%;
     background: linear-gradient(135deg, #4a90e2, #50c9ce);
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+}*/
 
 /* Contenedor del menú */
-.container-header {
+/*.container-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-}
+}*/
 
 /* Logo del menú */
-.navbar-brand {
+/*.navbar-brand {
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -30,13 +30,13 @@
 }
 
     .navbar-brand img {
-        width: 40px; /* Ajusta el tamaño del logo */
-        height: auto;
+        width: 40px;*/ /* Ajusta el tamaño del logo */
+        /*height: auto;
         margin-right: 10px;
-    }
+    }*/
 
 /* Navegación */
-.navbar-nav {
+/*.navbar-nav {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -56,18 +56,18 @@
 
     .nav-link:hover {
         color: #ffeb3b;
-    }
+    }*/
 
 /* Botón de menú en móviles */
-.btn-menu {
+/*.btn-menu {
     display: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-}
+}*/
 
 /* Estilos para menú responsive */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .navbar-nav {
         display: none;
         flex-direction: column;
@@ -91,5 +91,5 @@
     .navbar-nav.active {
         display: flex;
     }
-}
+}*/
 
