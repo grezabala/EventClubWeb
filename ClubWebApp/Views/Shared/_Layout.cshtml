@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <!--link event_style.css-->
     <link rel="stylesheet" href="~/css/event_style.css" asp-append-version="true" />
+    <!--link menu_style.css-->
+    <link rel="stylesheet" href="~/css/menu_style.css" asp-append-version="true" />
     @* <link rel="stylesheet" href="/css/event_reponsive.css" asp-append-version="true" /> *@
     <link rel="stylesheet" href="~/ClubWebApp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
     @*ENLACE PARA EL MENU RESPONSIVE*@
     <link href="~/css/menustyle.css" rel="stylesheet" />
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS + Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <!--OPENG GRAPH-->
     <meta property="og:title" content="EVENT - ORGANIZAMOS TU EVENTOS POR TI" />
     <meta property="og:description" content="DINOS QUE DESEA Y NOSOTROS HACEMOS TU EVENTO REALIDA" />
@@ -63,6 +70,25 @@
 
         </nav>
     </header>
+
+    <!--MENU FLOTANTES-->
+    <div class="menu-flotante d-none d-md-flex flex-column align-items-end" id="menuFlotante">
+        <div class="menu-opciones">
+            <a href="@Url.Action("Index", "Home")" data-aos="zoom-in" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
+                <i class="bi bi-house-door-fill"></i> Event
+            </a>
+            <a href="@Url.Action("Contacto", "Home")" data-aos="zoom-in" data-aos-delay="100" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
+                <i class="bi bi-envelope"></i> Contacto
+            </a>
+            <a href="@Url.Action("Ubicacion", "Home")" data-aos="zoom-in" data-aos-delay="200" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
+                <i class="bi bi-geo-alt"></i> Ubicación
+            </a>
+        </div>
+        <button class="menu-icono" onclick="toggleMenu()">
+            <i class="bi bi-plus-lg" id="iconoMenu"></i>
+        </button>
+    </div>
+
     <div class="container">
         @*  <div class="card card-lados" style="width: 17.9rem">
             <div class="card-body">
@@ -88,6 +114,32 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+    <div class="sub-footer py-4">
+        <div class="container">
+            <article class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <h5>Planificación Integral</h5>
+                    <p>Nos encargamos de cada detalle desde la conceptualización hasta la ejecución del evento.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <h5>Descoración Temática</h5>
+                    <p>Diseñamos ambientes únicos y personalizados según la ocasión y tus gustos.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <h5>Logística y Coordinación</h5>
+                    <p>Gestionamos proveedores, tiempos y recursos para garantizar un evento impecable.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <h5>Eventos Corporativos</h5>
+                    <p>Especialistas en eventos empresariales, lanzamientos de productos y conferencias.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <h5>Bodas y Celebraciones</h5>
+                    <p>Transformamos tu día especial en una experiencia inolvidable para ti y tus invitados.</p>
+                </div>
+            </article>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted" style="margin-bottom:-3900px;">
@@ -128,10 +180,7 @@
         <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-danger btn-social btn-instagram footer-icon ">
             <i class="fab fa-instagram" style="font-size:25px;"></i> @* Instagram *@
         </a>
-        <!--Threads
-        <a href="https://www.threads.net" target="_blank" class="btn btn-outline-dark btn-social btn-threads footer-icon">
-            <i class="fab fa-threads" style="font-size:25px;"></i> @* Threads *@
-        </a>-->
+
         <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-primary btn-social btn-linkedin footer-icon">
             <i class="fab fa-linkedin" style="font-size:25px;"></i> @* LinkedIn *@
         </a>
@@ -172,7 +221,28 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Bootstrap y AOS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+
+    <script>
+        function toggleMenu() {
+          const menu = document.getElementById("menuFlotante");
+          const icono = document.getElementById("iconoMenu");
+          menu.classList.toggle("open");
+
+          icono.classList.toggle("bi-plus-lg");
+          icono.classList.toggle("bi-x-lg");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          AOS.init({ duration: 800, once: true });
+          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+          tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+        });
+    </script>
 
     <script>
         function myFunction() {
@@ -183,6 +253,13 @@
                 x.className = "topnav";
             }
         }
+    </script>
+
+    <script>
+        AOS.init({
+          duration: 1000,
+          once: true
+        });
     </script>
 </body>
 </html>

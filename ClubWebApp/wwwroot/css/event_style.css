@@ -37,15 +37,10 @@ body {
     box-sizing: border-box;
 }
 
-/*form {
-    width:100%;
-}*/
-
 /*Contenedor del formulario flexible */
 .form-row {
     display: flex;
     flex-wrap: wrap; /*Permite que los elementos se ajusten */
-    /*    justify-content: space-between;*/
     margin-bottom: 15px;
 }
 
@@ -93,8 +88,6 @@ body {
         text-decoration: blink;
         font-size: 18px;
         cursor: pointer;
-        /*background-color: var(--color-azul);*/
-        /*  color: var(--color-blanco);*/
         border-radius: 8px;
         border: 1px solid;
         transition: box-shadow 0.2s ease-in-out;
@@ -144,7 +137,7 @@ body {
     margin: 10px 0;
 }
 
-/*class hero container*/
+/*Class hero container*/
 .hero {
     background-color: var(--color-azul-palido);
     text-align: center;
@@ -161,7 +154,7 @@ body {
 }
 
 
-/*codigo css para los section de promociones de los tipos de eventos que organizamos*/
+/*Código css para los section de promociones de los tipos de eventos que organizamos*/
 .event-section {
     background-color: var(--color-blanco);
     margin-bottom: 2rem;
@@ -319,10 +312,8 @@ body {
 
 /*Estilos para los inputs*/
 .form-caja {
-    /*  position: relative;*/
-    /*  margin-right: -15px;*/
-    /**/ height: 40px;
-    /**/ width: 100%;
+    height: 40px;
+    width: 100%;
     margin-block: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -386,6 +377,19 @@ body {
         color: #28a745;
     }
 
+.form-general {
+    height: 670px;
+    margin: auto;
+    border: 1px solid var(--colo-gris-grisaceo);
+    margin-block: 10px;
+    margin-bottom: 70px;
+}
+
+    .form-general article {
+        margin-left: 60px;
+        margin-bottom: 2px;
+    }
+
 /* Para pantallas pequeñas (ej. móviles)*/
 @media (max-width: 480px) {
     .form-caja {
@@ -429,35 +433,6 @@ body {
         font-size: 14px;
     }
 }
-
-
-/*@media (max-width:1024px) {
-    .container {
-        width:95%;
-    }
-}
-
-@media (max-width:768px) {
-    main {
-        flex-direction:column !important;
-        align-items:center;
-    }
-    
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 15px;
-    }
-
-    main {
-        padding:10px;
-    }
-
-    footer {
-        padding:10px;
-    }
-}*/
 
 /*CSS FOOTER*/
 .footer {
@@ -507,16 +482,16 @@ body {
     transition: all 0.3s ease-in-out;
     text-decoration: none;
 }
-/*EventClubWeb*/
+
     .footer-contact-link:hover {
         background-color: var(--color-azul-corporativo);
         color: var(--color-verde-esmearalda);
         text-decoration: blink;
         font-size: 20px;
-        margin:auto;
-        height:5px;
-        padding:8px;
-        border-radius:20px;
+        margin: auto;
+        height: 5px;
+        padding: 8px;
+        border-radius: 20px;
     }
 
     .footer-contact-link i {
@@ -540,6 +515,30 @@ body {
         .footer-contact-link:hover i {
             transform: scale(1.2);
         }
+
+/*SUB FOOTER*/
+.sub-footer {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 15px 0;
+    font-size: 0.8em;
+}
+
+    .sub-footer h5 {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .sub-footer p {
+        margin: 0;
+    }
+
+    .sub-footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
 /*Botones footer*/
 .card-footer {
@@ -586,4 +585,20 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 15px;
+}
+
+/*CODIGO CSS PARA LA */
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+.gallery {
+    padding: 20px;
 }

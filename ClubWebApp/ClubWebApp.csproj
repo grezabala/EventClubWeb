@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\images\EventosSociales\" />
+    <Folder Include="wwwroot\images\EventosCulturales\" />
+    <Folder Include="wwwroot\images\EventosCelebracion\" />
+    <Folder Include="wwwroot\images\EventosConversatorio\" />
+    <Folder Include="wwwroot\images\EventosBodas\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -36,7 +36,7 @@ namespace ClubWebApp.Controllers
         }
 
         [HttpGet]
-        [ServiceFilter(typeof(AuthFilter))]
+        //[ServiceFilter(typeof(AuthFilter))]
         public IActionResult Cread()
         {
 
