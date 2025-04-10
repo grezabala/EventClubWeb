@@ -25,7 +25,24 @@ namespace ClubWebApp.Controllers
         //[ServiceFilter(typeof(AuthFilter))]
         public async Task<IActionResult> Index()
         {
-            return View(await _eventosService.GetEventosAsync());
+
+            try
+            {
+                var _list = await _eventosService.GetEventosAsync();
+                if (_list is null || !_list.Any())
+                    return RedirectToAction("Service", "Home");
+
+
+                return View(_list);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
 
         [HttpGet]

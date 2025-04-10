@@ -39,8 +39,9 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between topnav" id="myTopnav">
                     <ul class="navbar-nav flex-grow-1">
+                       
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Index">PROXIMOS EVENTOS</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="#">PROXIMOS EVENTOS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Cread">REGISTRAR REVENTO PRIVADO</a>
@@ -54,15 +55,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="EventosPublicos" asp-action="Cread">REGISTRAR EVENTO PUBLICO</a>
                         </li>
-                        <li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">NUESTRA FILOSOFIA</a>
                         </li>
-                        <li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">CONTACTOS</a>
                         </li>
-                        <li>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Login">INICIAR SESION</a>
-                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" data-bs-toggle="modal" asp-controller="Clientes" asp-action="Login" data-bs-target="#exampleModal">INICIAR SESION</a>
+                        </li>                        
                     </ul>
                 </div>
 
@@ -77,11 +78,11 @@
             <a href="@Url.Action("Index", "Home")" data-aos="zoom-in" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
                 <i class="bi bi-house-door-fill"></i> Event
             </a>
-            <a href="@Url.Action("Contacto", "Home")" data-aos="zoom-in" data-aos-delay="100" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
+            <a href="@Url.Action("Contact", "Home")" data-aos="zoom-in" data-aos-delay="100" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
                 <i class="bi bi-envelope"></i> Contacto
             </a>
-            <a href="@Url.Action("Ubicacion", "Home")" data-aos="zoom-in" data-aos-delay="200" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
-                <i class="bi bi-geo-alt"></i> Ubicación
+            <a href="@Url.Action("Login", "Clientes")" data-aos="zoom-in" data-aos-delay="200" data-bs-toggle="tooltip" style="color:aliceblue; font-size:18px;">
+                <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
             </a>
         </div>
         <button class="menu-icono" onclick="toggleMenu()">
@@ -218,6 +219,9 @@
             </p>
         </div>
     </footer>
+
+<!--libreria para las vista modal-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -61,6 +61,7 @@ body {
         text-decoration: none;
     }
 
+    /*Evento hover para el menu principal*/
     .header-navbar li a:hover {
         font-size: 18px;
         color: var(--color-azul-corporativo) !important;
@@ -84,17 +85,66 @@ body {
     color: var(--color-blanco) !important;
 }
 
+    /*Evento hover para el sub menu de la pagina principal*/
     .navbar-ul li a:hover {
         text-decoration: blink;
-        font-size: 18px;
+        font-size: 16px;
+        padding: 10px;
+        max-width: 20%;
         cursor: pointer;
         border-radius: 8px;
         border: 1px solid;
         transition: box-shadow 0.2s ease-in-out;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
     }
+/*clase css para el carousel*/
+.card-carousel {
+    font-size: 14px;
+    color: var(--color-gris);
+}
 
-/*Toca hacer de Batman de nuevo para recordar porque siempre debemos tener esa oscuridad */
+    .card-carousel p, h5 {
+        font-size: 18px;
+        color: var(--color-blanco) !important;
+    }
+
+    .card-carousel img {
+        border-radius: 8px;
+        margin-top: 10px;
+        max-width: 440px;
+        max-height: 425px;
+    }
+
+/*@media (max-width:1200px) {
+    .navbar-ul li a:hover {
+        font-size: 18px;
+        padding: 12px;
+        max-width: 25%;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    }*/
+
+@media (max-width:576px) {
+    .navbar-ul li a:hover {
+        font-size: 12px;
+        padding: 6px;
+        max-width: 60%;
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar-ul li a:hover {
+        font-size: 14px;
+        padding: 8px;
+        max-width: 40%;
+        border-radius: 6px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    }
+}
 
 .container {
     width: 100%;
@@ -196,7 +246,6 @@ body {
     border-radius: 8px 8px 0 0;
 }
 
-/*Efecto hover en las filas*/
 .btn {
     padding: 8px 12px;
     border-radius: 20px;
@@ -309,6 +358,92 @@ body {
     font-weight: bold;
 }
 
+/*Contactos*/
+.main-flex {
+    background-color: var(--color-azul-brillante);
+    color: var(--color-blanco);
+    padding: 40px;
+    flex: 1;
+    margin-left:25px;
+    right:50%;
+    bottom:5px;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    background-size: cover;
+    max-width:400px;
+    height:540px;
+    padding:15px;
+    margin-top:10px;
+    margin-bottom:-20px !important;
+    box-sizing:border-box;
+}
+
+.contacto-container {
+    margin-top: -90px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px;
+}
+
+    .contacto-container article {
+        max-width: 300px;
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        font-family: var(--fuente-general);
+    }
+
+    .contacto-container h2 {
+        margin-bottom: 1rem;
+        color: #1fa2ff;
+    }
+
+    .contacto-container p {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+    }
+
+    .contacto-container i {
+        color: #1fa2ff;
+        margin-right: 8px;
+    }
+    /*boton contactos*/
+.boton-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    max-height:200px;
+    max-width:200px;
+}
+
+.boton-enviar {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+    .boton-enviar:hover {
+        background-color: #28a745; /* verde */
+        color: #ffffff;
+        transform: scale(1.05);
+        border-color: #28a745;
+    }
+
+
 
 /*Estilos para los inputs*/
 .form-caja {
@@ -327,6 +462,7 @@ body {
     z-index: 0;
     left: 110px;
     margin-block: 10px; /*Para hacer los fomulario responsive*/
+    border-radius: 18px;
 }
 
     .form-caja input,
@@ -339,18 +475,15 @@ body {
         box-sizing: border-box;
     }
 
-    .form-caja input {
+    .form-caja input,
+    .form-caja textarea {
         width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         padding: 10px;
-        font-size: 15px;
-        border: 2px solid var(--color-gris-claro-estandar);
-        border-radius: 5px;
+        margin-bottom: 1rem;
+        border: none;
+        border-bottom: 2px solid #ccc;
         outline: none;
-        background: transparent;
-        transition: 0.3s ease-in-out;
+        transition: border-color 0.3s;
     }
 
         .form-caja input:focus {
