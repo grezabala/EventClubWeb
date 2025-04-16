@@ -4,139 +4,127 @@
     ViewData["Title"] = "Registrarse";
 }
 
-    <div class="row mt-5 justify-content-center">
-        <div class="col-sm-8">
-            <div class="card-body">
-                <div class="card-header text-center">
-                    <h3 class="text-capitalize">Registrarse</h3>
-                </div>
-                <div class="">
-                    <main class="">
-                        <form asp-action="Registrarse" asp-controller="Clientes" method="post" id="formRegistro" onsubmit="">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <div class="form-row input-group">
-                                <div class="form-group col-md-5">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="NombreCompleto" class="form-control" value="" placeholder="Nombre  Completo" required />
-                                        <label>Nombre  Completo</label>
-                                        <span asp-validation-for="NombreCompleto" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="Cedula" class="form-control" placeholder="Cédula" required />
-                                        <label>Cédula</label>
-                                        <span asp-validation-for="Cedula" class="text-danger"></span>
-                                    </div>
-                                </div>
+<div class="row mt-5 justify-content-center" style="margin-top:-55px !important;">
+    <div class="col-sm-8">
+        <div class="card-body container-body">
+            <div class="card-header text-center">
+                <h3 class="text-capitalize">Registrarse</h3>
+            </div>
+            <div class="card">
+                <br />
+                <form asp-action="Registrarse" asp-controller="Clientes" method="post" id="formRegistro" onsubmit="">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row input-group">
+                        <div class="form-group col-md-6">
+                            <div class="form-group form-caja">
+                                <input asp-for="NombreCompleto" class="form-control" value="" placeholder="Nombre  Completo" required />
+                                <span asp-validation-for="NombreCompleto" class="text-danger"></span>
                             </div>
-                            <div class="form-row input-group">
-                                <div class="form-group col-md-5">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="Telefono" class="form-control" placeholder="Número de telefono" required />
-                                        <label>Telefono (809 829 849)</label>
-                                        <span asp-validation-for="Telefono" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="Celular" class="form-control" placeholder="Número de celular" required />
-                                        <label>Celular (809 829 849)</label>
-                                        <span asp-validation-for="Celular" class="text-danger"></span>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="form-group form-caja">
+                                <input asp-for="Cedula" class="form-control" placeholder="Cédula" required />
+                                <span asp-validation-for="Cedula" class="text-danger"></span>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-10">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="Email" class="form-control" type="email" data-validation="email" placeholder="ej:events@gmail" id="email" required />
-                                        <label>Correo Electrónico</label>
-                                        <span id="emailError" asp-validation-for="Email" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-10">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="Direccion" class="form-control" placeholder="Dirección" required />
-                                        <label>Dirección</label>
-                                        <span asp-validation-for="Email" class="text-danger"></span>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="form-row input-group">
+                        <div class="form-group col-md-6">
+                            <div class="form-group form-caja">
+                                <input asp-for="Telefono" class="form-control" placeholder="Número de telefono" required />
+                                <span asp-validation-for="Telefono" class="text-danger"></span>
                             </div>
-                            <hr />
-                            <p class="text-center">CREAR UNA CONTRASEÑA PARA SU USUARIO</p>
-                            <hr />
-                            <div class="form-row input-group">
-                                <div class="form-group col-md-5">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="PasswordUser" id="password" class="form-control" type="password" placeholder="Contraseña" required />
-                                        <label>Contraseña</label>
-                                        <span asp-validation-for="PasswordUser" class="text-danger"></span>                                       
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <div class="form-group form-caja">
-                                        <input asp-for="ConfirmarPasswordUser" id="confirmPassword" class="form-control" type="password" placeholder="Confirmar Contraseña" required />
-                                        <label>Confirmar Contraseña</label>
-                                        <span asp-validation-for="ConfirmarPasswordUser" class="text-danger"></span>                                       
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="form-group form-caja">
+                                <input asp-for="Celular" class="form-control" placeholder="Número de celular" required />
+                                <span asp-validation-for="Celular" class="text-danger"></span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <div class="form-group form-caja">
+                                <input asp-for="Email" class="form-control" type="email" data-validation="email" placeholder="ej:events@gmail" id="email" required />
+                                <span id="emailError" asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <div class="form-group form-caja">
+                                <input asp-for="Direccion" class="form-control" placeholder="Dirección" required />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row input-group">
+                        <div class="form-group col-md-6">
+                            <div class="form-group form-caja">
+                                <input asp-for="PasswordUser" id="password" class="form-control" type="password" placeholder="Contraseña" required />
+                                <span asp-validation-for="PasswordUser" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="form-group form-caja">
+                                <input asp-for="ConfirmarPasswordUser" id="confirmPassword" class="form-control" type="password" placeholder="Confirmar Contraseña" required />
+                                <span asp-validation-for="ConfirmarPasswordUser" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="card-footer text-center">
+                        <p class="bg-light" style="font-size:24px;">O regístrate con</p>
+                        <div class="social-login">
+                            <a href="/signin-google" class="btn btn-danger">
+                                <i class="fab fa-google" style="font-size:20px;"></i>
+                                Gmail
+                            </a>
+                            <a href="/signin-facebook" class="btn btn-primary">
+                                <i class="fab fa-facebook-f" style="font-size:20px;"></i>
+                                Facebook
+                            </a>
+                            <a href="/signin-microsoft" class="btn btn-secondary">
+                                <i class="fab fa-windows" style="font-size:20px;"></i>
+                                Outlook
+                            </a>
+                            <a href="/signin-apple" class="btn btn-dark">
+                                <i class="fab fa-apple" style="font-size:20px;"></i>
+                                Apple
+                            </a>
+                        </div>
+                        <br />
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-sm btn-success" onclick="validarEmail()">
+                                <i class="fa fa-save"> </i> Guardar
+                            </button>
+                            <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" onclick="CancelarRegistro('formRegistro')">
+                                <i class="fa fa-ban"></i> Cancelar
+                            </button>
+
                             <br />
-                            <div class="card-footer text-center">
-                                <p class="bg-light" style="font-size:24px;">O regístrate con</p>
-                                <div class="social-login">
-                                    <a href="/signin-google" class="btn btn-danger">
-                                        <i class="fab fa-google" style="font-size:20px;"></i>
-                                        Gmail
-                                    </a>
-                                    <a href="/signin-facebook" class="btn btn-primary">
-                                        <i class="fab fa-facebook-f" style="font-size:20px;"></i>
-                                        Facebook
-                                    </a>
-                                    <a href="/signin-microsoft" class="btn btn-secondary">
-                                        <i class="fab fa-windows" style="font-size:20px;"></i>
-                                        Outlook
-                                    </a>
-                                    <a href="/signin-apple" class="btn btn-dark">
-                                        <i class="fab fa-apple" style="font-size:20px;"></i>
-                                        Apple
-                                    </a>
-                                </div>
-                                <br />
-
-                            </div>
-                            <div class="card-footer">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-sm btn-success" onclick="validarEmail()">
-                                        <i class="fa fa-save"> </i> Guardar
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" onclick="CancelarRegistro('formRegistro')">
-                                        <i class="fa fa-ban"></i> Cancelar
-                                    </button>
-
-                                    <br />
-                                    <hr />
-                                    <a class="boton-enlace" href="@Url.Action("Login", "Clientes")">INICIO DE SESION</a>
-                                </div>
-                            </div>
-                        </form>
-                    </main>
-                </div>
+                            <hr />
+                            <a class="boton-enlace" href="@Url.Action("Login", "Clientes")">INICIO DE SESION</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <script>
-        //Codigo para cancelar en el envio del formulario, solo para limpiar el formulario
-        function CancelarRegistro(formId) {
-            if (confirm("Se eliminara la información ingresada en el formulario y no podra registrarte. ¿Está seguro que desea cancelar la solicitud?")) {
-                document.getElementById(formId).reset();
-            }
+</div>
+<script>
+    //Codigo para cancelar en el envio del formulario, solo para limpiar el formulario
+    function CancelarRegistro(formId) {
+        if (confirm("Se eliminara la información ingresada en el formulario y no podra registrarte. ¿Está seguro que desea cancelar la solicitud?")) {
+            document.getElementById(formId).reset();
         }
+    }
 
-        // cuando pierde el foco, este valida si lo que esta en el campo de texto si es un correo o no y muestra una respuesta
-        $('form').find('input[type=email]').blur(function () {
-            caracteresCorreoValido($(this).val(), '#xmail')
-        });
+    // cuando pierde el foco, este valida si lo que esta en el campo de texto si es un correo o no y muestra una respuesta
+    $('form').find('input[type=email]').blur(function () {
+        caracteresCorreoValido($(this).val(), '#xmail')
+    });
 
-    </script>
+</script>
 

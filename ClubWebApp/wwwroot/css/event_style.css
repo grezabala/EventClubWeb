@@ -57,21 +57,39 @@ body {
     margin: auto;
 }
 
-    .header-navbar:hover {
-        text-decoration: none;
-    }
+.header-event {
+    font-family: var(--fuente-general);
+    font-size: 22px;
+}
 
-    /*Evento hover para el menu principal*/
-    .header-navbar li a:hover {
-        font-size: 18px;
-        color: var(--color-azul-corporativo) !important;
-        cursor: pointer;
-        background-color: var(--colo-gris-grisaceo);
-        border: 1px solid var(--color-gris-grisaceo-palido);
-        border-radius: 8px;
-        transition: box-shadow 0.2s ease-in-out;
-        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
-    }
+.event-input {
+  /*  width: 450px !important;*/
+    height: 95px !important;
+}
+
+/*.header-event:hover {
+        font-family: var(--fuente-general);
+        border: none;
+        font-size: 20px;
+        color:var(--color-blanco);
+        padding: 10px 14px;
+    }*/
+
+.header-navbar:hover {
+    text-decoration: none;
+}
+
+/*Evento hover para el menu principal*/
+.header-navbar li a:hover {
+    font-size: 18px;
+    color: var(--color-azul-corporativo) !important;
+    cursor: pointer;
+    background-color: var(--colo-gris-grisaceo);
+    border: 1px solid var(--color-gris-grisaceo-palido);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
 
 .navbar-brand {
     font-weight: bold;
@@ -290,18 +308,18 @@ body {
     }
 
 /* Colores personalizados por red social */
-.btn-discord:hover {
+/*.btn-discord:hover {
     background-color: var(--color-azul-corporativo);
     border-color: var(--color-azul-corporativo);
     font-size: 25px;
-}
+}*/
 
-.btn-threads:hover {
+/*.btn-threads:hover {
     background-color: var(--color-negro-negro);
     border-color: var(--color-negro-negro);
     font-size: 25px;
     border-radius: 30px;
-}
+}*/
 
 /*Estilos para los Card*/
 /*.card {
@@ -364,9 +382,9 @@ body {
     color: var(--color-blanco);
     padding: 40px;
     flex: 1;
-    margin-left:25px;
-    right:50%;
-    bottom:5px;
+    margin-left: 25px;
+    right: 50%;
+    bottom: 5px;
     max-width: 420px;
     display: flex;
     flex-direction: column;
@@ -374,12 +392,12 @@ body {
     align-items: flex-start;
     gap: 40px;
     background-size: cover;
-    max-width:400px;
-    height:540px;
-    padding:15px;
-    margin-top:10px;
-    margin-bottom:-20px !important;
-    box-sizing:border-box;
+    max-width: 400px;
+    height: 540px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: -20px !important;
+    box-sizing: border-box;
 }
 
 .contacto-container {
@@ -414,13 +432,14 @@ body {
         color: #1fa2ff;
         margin-right: 8px;
     }
-    /*boton contactos*/
+/*boton contactos*/
 .boton-contenedor {
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    max-height:200px;
-    max-width:200px;
+    max-height: 200px;
+    max-width: 250px;
+  
 }
 
 .boton-enviar {
@@ -586,6 +605,10 @@ body {
     font-family: var(--fuente-general);
 }
 
+.icon-reddit:hover {
+    color: coral;
+}
+
 .footer-contacto {
     color: var(--color-azul-muy-palido);
     padding: 12px;
@@ -605,6 +628,64 @@ body {
     font-size: 20px;
     color: var(--color-gris-antracita);
     margin: 0;
+}
+
+/*Estilos para los icon de red social Contactos*/
+.social-icon {
+    font-size: 25px;
+    color: inherit;
+}
+
+.btn-social-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+    .btn-social-icon:hover {
+        opacity: 0.85;
+        text-decoration: none;
+    }
+
+    .btn-social-icon i {
+        font-size: 25px;
+    }
+
+/* Color por red social */
+.linkedin {
+    font-size: 30px;
+    color: #0077B5;
+    border-color: #0077B5;
+}
+
+.x-twitter {
+    color: #000000;
+    border-color: #000000;
+}
+
+.facebook {
+    color: #1877F2;
+    border-color: #1877F2;
+}
+
+.instagram {
+    color: #E1306C;
+    border-color: #E1306C;
+}
+
+.whatsapp {
+    color: #25D366;
+    border-color: #25D366;
+}
+
+.threads {
+    color: #000000;
+    border-color: #000000;
 }
 
 /*CSS PARA LOS ENLACES DE CONTACTO EN EL FOOTER*/

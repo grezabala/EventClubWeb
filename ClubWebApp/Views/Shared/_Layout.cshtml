@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <!--link event_style.css-->
     <link rel="stylesheet" href="~/css/event_style.css" asp-append-version="true" />
+    <!--link Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <!--link menu_style.css-->
     <link rel="stylesheet" href="~/css/menu_style.css" asp-append-version="true" />
     @* <link rel="stylesheet" href="/css/event_reponsive.css" asp-append-version="true" /> *@
@@ -32,7 +36,7 @@
     <header>
         <nav class="header-navbar navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 ">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color:rgba(0, 0, 0, .9) !important;">EVENT</a>
+                <a class="navbar-brand header-event" asp-area="" asp-controller="Home" asp-action="Index">EVENT</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -62,7 +66,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">CONTACTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" data-bs-toggle="modal" asp-controller="Clientes" asp-action="Login" data-bs-target="#exampleModal">INICIAR SESION</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Login">INICIAR SESION</a>
                         </li>                        
                     </ul>
                 </div>
@@ -167,15 +171,15 @@
             }
 
         </style>
-        <!-- Agregar Font Awesome para los iconos -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+       @*  <!-- Agregar Font Awesome para los iconos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> *@
 
         <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-primary btn-social btn-facebook footer-icon">
             <i class="fab fa-facebook-f" style="font-size:25px;"></i> @* Facebook *@
         </a>
 
-        <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-info btn-social btn-twitter footer-icon">
-            <i class="fab fa-twitter" style="font-size:25px;"></i> @* X *@
+        <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-dark btn-social btn-x footer-icon">
+            <i class="fab fa-x-twitter" style="font-size:25px;"></i> @* X *@
         </a>
 
         <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-danger btn-social btn-instagram footer-icon ">
@@ -203,9 +207,19 @@
             <i class="fab fa-pinterest" style="font-size:25px;"></i> @* Pinterest *@
         </a>
 
-        <a href="https://discord.com" target="_blank" class="btn btn-outline-dark btn-social btn-discord footer-icon">
+        <a href="https://discord.com" target="_blank" class="btn btn-outline-primary btn-social btn-discord footer-icon">
             <i class="fab fa-discord" style="font-size:25px;"></i> @* Discord *@
         </a>
+
+        <a href="https://www.reddit.com" target="_blank" class="btn btn-social btn-reddit footer-icon icon-reddit">
+            <i class="fab fa-reddit" style="font-size:35px;"></i> @* Reddit *@
+        </a>
+
+        <a href="https://www.threads.net" target="_blank" class="btn btn-outline-dark btn-social btn-threads footer-icon">
+            <i class="fab fa-threads" style="font-size:25px;"></i> @* Threads *@
+        </a>
+
+
         <hr />
         <!-- Agregar Font Awesome para los iconos -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
