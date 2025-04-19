@@ -92,3 +92,61 @@ jQueryAjaxPost = form => {
     modalDeleteDialog.sc_deleteDialog = methods;
 
 })(window);
+
+    //        < !--Código de JQuery para validar el formulario de contacto-- >
+    //@section Script {
+    //<script type="text/javascript">
+        var iNumber = Math.floor(1000+ Math.random() * 9000);
+
+        $(document).ready(function (){
+            $("#btnSubmit").prop("disabled", true);
+        $("#divGenerateRandomValues").html(("<input id='txtNewInput' value='" + iNumber + "' disabled />");
+
+        //Validar la cahe
+        $("#btnSubmit").click(function (e){
+            e.preventDefault();
+        if($("#textInput").val() != iNumber){
+            $('errCap').text('Invalid Captcha!');
+
+                  } else{
+            $('.errCap').text('');
+        submitForm();
+
+                  }
+              });
+
+        var wrongInput = function(){
+
+                  return $("#textInput").val() != iNumber;
+              };
+
+        $("#textInput").bind('input', function(){
+
+            $("#btnSubmit").prop('disabeld', wrongInput);
+              
+              });
+
+        });
+
+
+        function submitForm(){
+
+            $('#booking_form').validate({
+                rules: {
+                    name: { required: true, minlength: 10 },
+
+
+
+
+                }
+
+
+
+            })
+
+
+
+        }
+//    </script>
+
+//}
