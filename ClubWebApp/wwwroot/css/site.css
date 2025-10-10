@@ -1,6 +1,8 @@
 ﻿/*CSS POR DEFOULT*/
 html {
     font-size: 14px;
+    font-family: Signika, sans-serif;
+    /*font-family: 'Noto Sangs', 'sans-serif' !important;*/
 }
 
 @media (min-width: 768px) {
@@ -24,5 +26,6 @@ html {
 */
 body {
     margin-bottom: 60px;
+    
 }
 

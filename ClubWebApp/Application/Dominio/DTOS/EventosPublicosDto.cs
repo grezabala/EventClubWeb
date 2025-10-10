@@ -12,6 +12,9 @@
         public string Direccion { get; set; }
         public string HoraInicio { get; set; }
         public string HoraFinalizacion { get; set; }
+        public string Name_Cliente { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
     }
 
     public class POSTEventosPublicosDto
@@ -26,6 +29,9 @@
         public string Direccion { get; set; }
         public string HoraInicio { get; set; }
         public string HoraFinalizacion { get; set; }
+        public string Name_Cliente { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
     }
 
     public class PUTEventosPublicosDto
@@ -41,5 +47,8 @@
         public string Direccion { get; set; }
         public string HoraInicio { get; set; }
         public string HoraFinalizacion { get; set; }
+        public string Name_Cliente { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
     }
 }

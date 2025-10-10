@@ -33,7 +33,7 @@
                         <div class="form-row input-group">
                             <div class="form-group col-md-5">
                                 <div class="form-group form-caja">
-                                    <input type="text" name="telefono"  placeholder="Tel.: (809) "/>
+                                    <input type="text" name="telefono" placeholder="Tel.: (809) " />
                                 </div>
                             </div>
                             <div class="form-group col-md-5">
@@ -56,28 +56,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-2">
-                                <label class="control-lable">
+                        <div class="form-row input-group captcha">
+                            <div class="form-group col-md-4">
+                                <label class="control-lable form-caja">
                                     <div id="divGenerateRandomValues"></div>
                                 </label>
                             </div>
-                        </div>
-                        <div class="form-row">
                             <div class="form-group col-md-4">
                                 <div class="form-group form-caja">
                                     <input type="text" id="textInput" class="form-control" placeholder="Enter Captcha" />
                                     <span class="errCap text-danger"></span>
-                                </div>                              
+                                </div>
                             </div>
                         </div>
                         <div class="form-row row">
                             <div class="form-group col-md-5">
                                 <div class="boton-contenedor">
-                                    <button type="submit" class="boton-enviar">Enviar</button>
+                                    <button type="submit" d="btnSubmit" class="boton-enviar">Enviar</button>
                                 </div>
-                            </div>                            
-                        </div>                     
+                            </div>
+                        </div>                    
                     </form>
                 </div>
             </div>
@@ -128,3 +126,7 @@
     </div>
 </div>
 
+@section Scripts {
+    <script src="~/js/validation_contact.js"></script>
+
+}

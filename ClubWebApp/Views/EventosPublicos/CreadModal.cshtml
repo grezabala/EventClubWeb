@@ -1,0 +1,29 @@
+﻿@model ClubWebApp.Models.EventoPublicoViewModal
+
+@{
+    ViewBag.Title = "Registrar Evento Público";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="~/css/style_modal.css" rel="stylesheet" />
+
+<div class="form-container">
+    <div class="form-header">
+        REGISTRAR EVENTO PÚBLICO
+    </div>
+
+    @using (Html.BeginForm("Cread", "EventosPublicos", FormMethod.Post, new { EventId = "formEventoPublico" }))
+    {
+       @Html.AntiForgeryToken()
+       
+       <div class="form-row">
+           <div class="form-group form-col">
+               @Html.LabelFor(modal => modal.Nombre_Titulo)
+               @Html.TextBoxFor(modal => modal.Nombre_Titulo, new {@class = "form-control", placeholder = "Nombre o Titulo"})
+                @Html.ValidationMessageFor(model => model.Nombre_Titulo, "", new { @class = "text-danger" })
+
+           </div>
+       </div>
+      
+    }
+</div>

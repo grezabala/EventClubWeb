@@ -1429,9 +1429,9 @@
 }
 
 .bg-white {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
-  
+    --bs-bg-opacity: 1;
+    /*background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity));
+    background-color: #dddddd !important;*/
 }
 
 .bg-body {

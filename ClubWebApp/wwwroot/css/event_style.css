@@ -1,6 +1,7 @@
 ﻿/*VARIABLES GLOBALES*/
 :root {
     --color-amarillo-intenso: #ffc107;
+    --color-amarillo-dorado: #FFD700;
     --color-azul: #1a73e8;
     --color-azul-corporativo: #0077B5;
     --color-azul-palido: #d9f7ff;
@@ -11,6 +12,7 @@
     --color-background: linear-gradient(135deg, #4a90e2, #50c9ce);
     --color-claro: #ededed;
     --color-gris: #b4b4b4;
+    --color-gris-claro: #F0F0F0;
     --color-gris-antracita: #333;
     --color-gris-muy-palido: #f8f9fa;
     --color-gris-claro-estandar: #dddddd;
@@ -20,21 +22,29 @@
     --color-negro: #202124;
     --color-negro-negro: #000000;
     --color-rojo-brillante: #dc3545;
+    --color-verde-salvia: #97A884;
     --color-verde-esmeralda: #00c96d;
     --color-verde-primavera: #28a745;
+    --color-verde-pálido: #D3F3C4;
+    --color-verde-claro-vibrante: #9BE378;
+    --color-verde-oliva-militar: #6B7F49;
+    --color-verde-bosque: #294B27;
 }
 
 :root {
-    --fuente-general: Arial, Helvetica, sans-serif;
-    --fuente-sub-general: Times New Roman, Times, serif;
+    --fuente-general:  Open Sans, sans-serif;/*Arial, Helvetica, sans-serif;*/ 
+   --fuente-primaria: ;
 }
 
 /*NUEVO CSS PARA EL MENU NAVBAR PRICIPAR*/
 
 body {
+    font-family: Open Sans, sans-serif;
+    font-weight: 500;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color:var(--color-gris-claro-estandar);
 }
 
 /*Contenedor del formulario flexible */
@@ -44,12 +54,10 @@ body {
     margin-bottom: 15px;
 }
 
-/* Asegurar que los campos del formulario sean responsivos */
-/*.form-group {
-    flex: 1;
-    min-width: 280px;*/ /*Evita que se vuelvan demasiado pequeños */
-/*margin: 5px;
-}*/
+.header-menu {
+    opacity:1;
+    background-color:var(--color-amarillo-intenso) !important;
+}
 
 .header-navbar {
     font-size: 14px;
@@ -58,22 +66,12 @@ body {
 }
 
 .header-event {
-    font-family: var(--fuente-general);
     font-size: 22px;
 }
 
 .event-input {
-  /*  width: 450px !important;*/
     height: 95px !important;
 }
-
-/*.header-event:hover {
-        font-family: var(--fuente-general);
-        border: none;
-        font-size: 20px;
-        color:var(--color-blanco);
-        padding: 10px 14px;
-    }*/
 
 .header-navbar:hover {
     text-decoration: none;
@@ -82,10 +80,7 @@ body {
 /*Evento hover para el menu principal*/
 .header-navbar li a:hover {
     font-size: 18px;
-    color: var(--color-azul-corporativo) !important;
     cursor: pointer;
-    background-color: var(--colo-gris-grisaceo);
-    border: 1px solid var(--color-gris-grisaceo-palido);
     border-radius: 8px;
     transition: box-shadow 0.2s ease-in-out;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
@@ -97,23 +92,29 @@ body {
     text-transform: uppercase;
 }
 
-.navbar-ul {
-    font-family: var(--fuente-general);
+
+.nav-link {
+    padding:4px 1.5rem !important;
+}
+
+    .nav-link a  {
+        color: var(--color-blanco) !important;
+    }
+
+.navbar-ul li a{
     font-size: 16px;
     color: var(--color-blanco) !important;
 }
 
     /*Evento hover para el sub menu de la pagina principal*/
     .navbar-ul li a:hover {
-        text-decoration: blink;
-        font-size: 16px;
-        padding: 10px;
+        font-size: 14px;
         max-width: 20%;
         cursor: pointer;
         border-radius: 8px;
-        border: 1px solid;
         transition: box-shadow 0.2s ease-in-out;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+        color: var(--color-negro) !important;
     }
 /*clase css para el carousel*/
 .card-carousel {
@@ -132,14 +133,6 @@ body {
         max-width: 440px;
         max-height: 425px;
     }
-
-/*@media (max-width:1200px) {
-    .navbar-ul li a:hover {
-        font-size: 18px;
-        padding: 12px;
-        max-width: 25%;
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    }*/
 
 @media (max-width:576px) {
     .navbar-ul li a:hover {
@@ -197,7 +190,7 @@ body {
         }
 
 .sub-header {
-    background: linear-gradient(135deg, #4a90e2, #50c9ce);
+    background-color:var(--color-verde-oliva-militar);
     text-transform: full-width;
     padding: 1rem 0;
     width: 100%;
@@ -207,7 +200,7 @@ body {
 
 /*Class hero container*/
 .hero {
-    background-color: var(--color-azul-palido);
+    background-color: var(--color-verde-claro-vibrante);
     text-align: center;
     padding: 4rem 1rem;
     border-radius: 8px;
@@ -224,29 +217,42 @@ body {
 
 /*Código css para los section de promociones de los tipos de eventos que organizamos*/
 .event-section {
-    background-color: var(--color-blanco);
+    background-color: var(--color-verde-salvia);
     margin-bottom: 2rem;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    max-height: 590px;
 }
 
     .event-section h2 {
-        color: var(--color-azul-brillante);
-        margin-bottom: 1rem;
-        font-size: 2rem;
+    color: var(--color-blanco);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+    .event-section article {
+        color: var(--color-blanco);
+        font-weight:500;
     }
 
     .event-section .event-image {
-        width: 100%;
-        max-height: 300px;
+        max-width: 1300px;
+        max-height: 480px;
         object-fit: cover;
         border-radius: 8px;
         margin-bottom: 1rem;
-    }
+
+  }
 
     .event-section article {
         margin-top: 1rem;
+        position: relative;
+        width: 460px;
+        bottom: 520px;
+        font-size: 24px;
+        left: 35rem;
     }
 
     .event-section ul {
@@ -254,6 +260,230 @@ body {
         padding-left: 1.5rem;
     }
 
+
+    /*=========== eventos culturales ============*/
+.event-section-culturales {
+    background-color: var(--color-verde-salvia);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px  8px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    max-height: 570px;
+}
+
+    .event-section-culturales h2 {
+        color: var(--color-blanco);
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .event-section-culturales article {
+        color: var(--color-blanco);
+        font-weight: 500;
+        margin-right: 1rem;
+        position: relative;
+        width: 390px;
+        bottom: 400px;
+        font-size:24px;
+        left: 45rem;
+    }
+
+    .event-section-culturales ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+    }
+
+    .event-section-culturales img {
+        max-width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        left: 0.25rem;
+
+    }
+
+
+/*====== eventos sociales ========*/
+.event-section-sociales {
+    background-color:var(--color-verde-salvia);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    max-height: 550px;
+}
+
+    .event-section-sociales h2 {
+        color: var(--color-blanco);
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .event-section-sociales article {
+        color:var(--color-blanco);
+        font-weight: 500;
+        margin-top: 1rem;
+        position: relative;
+        width: 420px;
+        bottom: 450px;
+        font-size: 24px;
+        left: 32rem;
+    }
+
+    .event-section-sociales img {
+        max-width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        left: 0.25rem;
+    }
+
+    .event-section-sociales ul {
+       list-style:disc;
+       padding: 1.5rem;
+    }
+
+
+/*========  bodas ========*/
+
+.event-section-boda {
+    background-color: var(--color-verde-salvia);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    max-height: 580px;
+
+}
+
+    .event-section-boda h2 {
+        color: var(--color-blanco);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .event-section-boda article {
+        color: var(--color-blanco);
+        font-weight: 500;
+        margin-top: 1rem;
+        position: relative;
+        width: 470px;
+        bottom: 475px;
+        font-size: 22px;
+        left: 35rem;
+
+    }
+
+    .event-section-boda img {
+    max-width: 1400px;
+    max-height: 490px;
+    object-fit: fill;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    left: 0.25rem;
+    height:auto;
+
+}
+
+    .event-section-boda ul {
+        list-style: disc;
+        padding: 1.5rem;
+    }
+
+/*========= conversatorio para novios =========== */
+.event-section-novios {
+    background-color: var(--color-verde-salvia);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    max-height: 570px;
+ 
+}
+
+    .event-section-novios h2 {
+        color: var(--color-blanco);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+
+    }
+
+    .event-section-novios article {
+        color: var(--color-blanco);
+        font-weight: 500;
+        margin-top: 1rem;
+        position: relative;
+        width: 420px;
+        bottom: 510px;
+        font-size: 24px;
+        left: 35rem;
+    }
+
+    .event-section-novios img {
+        max-width: 800px;
+        max-height: 470px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        left: 0.25rem;
+        height: auto;
+    }
+
+    .event-section-novios ul {
+        list-style: disc;
+        padding: 1.5rem;
+    }
+
+/*=========== birthday ============= */
+.event-section-birthday {
+    background-color: var(--color-verde-salvia);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    max-height: 570px;
+}
+
+    .event-section-birthday h2 {
+        color:var(--color-blanco);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .event-section-birthday article {
+        color: var(--color-blanco);
+        font-weight: 500;
+        margin-top: 1rem;
+        position: relative;
+        width: 420px;
+        bottom: 510px;
+        font-size: 24px;
+        left: 35rem;
+    }
+
+    .event-section-birthday img {
+        max-width: 1200px;
+        max-height: 470px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        left: 0.25rem;
+        height: auto;
+    }
+
+
+/*=========== CARD HEADER ==========*/
 .card-header {
     background: var(--color-gris-antracita);
     color: var(--color-blanco);
@@ -307,68 +537,10 @@ body {
         color: var(--color-blanco);
     }
 
-/* Colores personalizados por red social */
-/*.btn-discord:hover {
-    background-color: var(--color-azul-corporativo);
-    border-color: var(--color-azul-corporativo);
-    font-size: 25px;
-}*/
-
-/*.btn-threads:hover {
-    background-color: var(--color-negro-negro);
-    border-color: var(--color-negro-negro);
-    font-size: 25px;
-    border-radius: 30px;
-}*/
-
-/*Estilos para los Card*/
-/*.card {
-    top: 0;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background: var(--color-blanco);
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0px auto;
-    align-content: center;
-    margin-bottom: 95px;
-    left: 60px;
-    z-index: 1000;
-    overflow-y: hidden;
-    position: relative;
-    max-width: 1200px;
-}*/
-
-/*.card-body {
-    background: var(--color-blanco);
-    padding: 20px;
-    width: 1500px !important;
-    left: -155px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: auto;
-    position: relative;
-    z-index: 1;
-    padding-bottom: -20px;
-    margin-top: -30px !important;
-    margin-bottom: 100px;
-    margin-block: 70px;
-}*/
-
-/*.card-main {
-    margin-top: 150px;
-    top: 0px;
-    overflow: hidden;
-    width: 100%;
-    padding: 10px;
-    padding-bottom: 100px;
-    padding-top: 10px;
-}*/
-
 /**Estilo para la cabecera*/
 .card-header {
-    background: linear-gradient(45deg, #62b6eb, #218838);
+    background-color: var(--color-negro);
+    /*background: linear-gradient(45deg, #62b6eb, #218838);*/
     color: white;
     border-radius: 10px 10px 0 0;
     padding: 15px;
@@ -376,10 +548,20 @@ body {
     font-weight: bold;
 }
 
+.event-header-title {
+    text-decoration:none;
+    font-size: 24px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    margin-left:510px !important;
+}
+
+
 /*Contactos*/
 .main-flex {
-    background-color: var(--color-azul-brillante);
-    color: var(--color-blanco);
+    background-color: var(--color-verde-oliva-militar);
+    color: var(--color-negro-negro);
     padding: 40px;
     flex: 1;
     margin-left: 25px;
@@ -432,14 +614,21 @@ body {
         color: #1fa2ff;
         margin-right: 8px;
     }
+
 /*boton contactos*/
 .boton-contenedor {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
-    max-height: 200px;
+    margin-top: -12px;
+    max-height: 400px;
     max-width: 250px;
-  
+    margin-left: 530px;
+}
+
+.captcha {
+    margin-left: -60px;
+    margin-top: 56.9px;
+    left: 40px;
 }
 
 .boton-enviar {
@@ -453,6 +642,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     transform: scale(1);
+    bottom: 200px;
 }
 
     .boton-enviar:hover {
@@ -460,6 +650,7 @@ body {
         color: #ffffff;
         transform: scale(1.05);
         border-color: #28a745;
+        font-size: 20px;
     }
 
 
@@ -614,7 +805,6 @@ body {
     padding: 12px;
     bottom: 10px;
     font-size: 14px;
-    font-family: var(--fuente-general);
 }
 
 .footer-div {
@@ -816,3 +1006,4 @@ body {
 .gallery {
     padding: 20px;
 }
+

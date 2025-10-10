@@ -124,6 +124,9 @@ namespace ClubWebApp.Application.Dominio.Repository
                 cmd.Parameters.Add(new SqlParameter("@Direccion", SqlDbType.VarChar, 250) { Value = pOST.Direccion });
                 cmd.Parameters.Add(new SqlParameter("@HoraInicio", SqlDbType.VarChar, 20) { Value = pOST.HoraInicio });
                 cmd.Parameters.Add(new SqlParameter("@HoraFinalizacion", SqlDbType.VarChar, 20) { Value = pOST.HoraFinalizacion });
+                cmd.Parameters.Add(new SqlParameter("@Name_Cliente", SqlDbType.VarChar, 250) { Value = pOST.Name_Cliente });
+                cmd.Parameters.Add(new SqlParameter("@Telefono", SqlDbType.VarChar, 30) { Value = pOST.Telefono });
+                cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 100) { Value = pOST.Email });
 
                 await cn.OpenAsync();
                 return await cmd.ExecuteNonQueryAsync() > 0;

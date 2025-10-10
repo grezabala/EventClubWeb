@@ -1,4 +1,11 @@
 ﻿
+:root {
+    --color--amarillo-mostazas: #FFC107;
+    --color-verde-oliva-militar: #6B7F49;
+    --color-verde-bosque: #294B27;
+}
+
+
 /*Estilo CSS para el menu flotantes.*/
 .menu-flotante {
     position:fixed;
@@ -8,7 +15,7 @@
 }
 
 .menu-icono {
-    background-color: #007bff;
+    background-color: var(--color--amarillo-mostazas);
     color:white;
     border:none;
     border-radius:50%;
@@ -30,7 +37,7 @@
 }
 
     .menu-opciones a {
-        background-color: #17a2b8;
+        background-color: var(--color-verde-bosque);
         color:white;
         padding: 10px 16px;
         margin-bottom: 8px;
@@ -44,6 +51,11 @@
         transform: scale(0.8);
         transition: all 0.3s ease;
     }
+
+        .menu-opciones a:hover {
+            font-size: 24px;
+            padding: 10px;
+        }
 
 .menu-flotante.open .menu-opciones {
     display:flex;

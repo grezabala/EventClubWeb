@@ -12,6 +12,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!--Fuente de letra de Google Fonts
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">-->
+@* 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet"> *@
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!--Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!--Open Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+
     <!--link menu_style.css-->
     <link rel="stylesheet" href="~/css/menu_style.css" asp-append-version="true" />
     @* <link rel="stylesheet" href="/css/event_reponsive.css" asp-append-version="true" /> *@
@@ -33,10 +56,13 @@
     <meta property="og:site_name" content="EVENT" />
 </head>
 <body>
-    <header>
-        <nav class="header-navbar navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 ">
+    <header class="header-menu">
+        <nav class="header-navbar navbar navbar-expand-sm navbar-toggleable-sm navbar-light @*bg-white*@ border-bottom box-shadow mb-3 ">
             <div class="container-fluid">
-                <a class="navbar-brand header-event" asp-area="" asp-controller="Home" asp-action="Index">EVENT</a>
+                <a class="navbar-brand header-event" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="event-text">EVENT</span>
+                   @*  <span class="event-icon"><i class="fas fa-home"></i></span> *@
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,7 +71,7 @@
                     <ul class="navbar-nav flex-grow-1">
                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="#">PROXIMOS EVENTOS</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Index">PROXIMOS EVENTOS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Cread">REGISTRAR REVENTO PRIVADO</a>

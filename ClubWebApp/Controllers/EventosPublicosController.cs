@@ -22,7 +22,7 @@ namespace ClubWebApp.Controllers
 
                 if (list is null || !list.Any())
                 {
-                    return RedirectToAction("Service","Home");
+                    return RedirectToAction("Service", "Home");
                 }
 
                 return View(list);
@@ -48,22 +48,21 @@ namespace ClubWebApp.Controllers
 
         public async Task<IActionResult> Cread(POSTEventosPublicosDto model)
         {
+            if (model == null)
+                return BadRequest(ModelState);
+
             try
             {
                 if (!ModelState.IsValid)
                     return NotFound("El formulario se envio vació");
 
-                if (model == null)
-                    return BadRequest(ModelState);
-
-                if (model.ClienteId > 0)
-                    return NotFound("Ingrese su ID para registrar su Evento correctamente.");
-
                 if (!await _eventosPublicos.IsCreadAsync(model))
+                {
+                    TempData["MensajeExito"] = "Eventos Público Reservado Exitosamente";
                     return RedirectToAction("Index");
+                }
 
-
-                return BadRequest(ModelState);
+                return View("Cread", model);
             }
             catch (Exception ex)
             {

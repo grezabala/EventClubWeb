@@ -13,38 +13,30 @@
                 <div class="card-header text-center">
                     <h3 class="text-capitalize">REGISTRAR EVENTO PUBLICO</h3>
                 </div>
-                <div>
+                <div>                 
                     <div>
-                        <div class="card">
-                            <br />
-                            <form asp-action="Cread" asp-controller="EventosPublicos" method="post">
+                        <div class="card" style="padding:10px 0">
+                            
+                            <form asp-action="Cread" asp-controller="EventosPublicos" method="post", id="formEventoPublico">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <div class="form-row input-group">
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-10">
                                         <div class="form-group form-caja">
-                                            <input asp-for="Nombre" class="form-control" placeholder="Nombre o Titulo" required />
+                                            <input asp-for="Nombre" class="form-control" placeholder="Nombre o Titulo del Evento" required />
                                             <span asp-validation-for="Nombre" class="text-danger"></span>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-10">
                                         <div class="form-group form-caja">
-                                            <input asp-for="ClienteId" class="form-control" placeholder="Cliente ID" required />
-                                            <span asp-validation-for="ClienteId" class="text-danger"></span>
+                                            <input asp-for="Descripcion" class="form-control" placeholder="Descripción del Evento" required />
+                                            <span asp-validation-for="Descripcion" class="text-danger"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <div class="form-gruop form-caja">
-                                            <input asp-for="Lugar" class="form-control" placeholder="Lugar" required />
-                                            <span asp-validation-for="Lugar" class="text-danger"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-10">
-                                        <div class="form-group form-caja">
-                                            <input asp-for="Atracciones" class="form-control" placeholder="Atracciones" required />
+                                            <input asp-for="Atracciones" class="form-control" placeholder="Atracciones (Opcional)" required />
                                             <span asp-validation-for="Atracciones" class="text-danger"></span>
                                         </div>
                                     </div>
@@ -52,15 +44,23 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <div class="form-group form-caja">
-                                            <input asp-for="Descripcion" class="form-control" placeholder="Descripción" required />
-                                            <span asp-validation-for="Descripcion"></span>
+                                            <input asp-for="Tipo" class="form-control" placeholder="Tipo de Evento" required />
+                                            <span asp-validation-for="Tipo" class="text-danger"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <div class="form-group form-caja">
-                                            <input asp-for="Direccion" class="form-control" placeholder="Dirección" required />
+                                            <input asp-for="Lugar" class="form-control" placeholder="Lugar o Establecimiento" required />
+                                            <span asp-validation-for="Lugar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-10">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Direccion" class="form-control" placeholder="Dirección donde se efectuara el Evento" required />
                                             <span asp-validation-for="Direccion" class="text-danger"></span>
                                         </div>
                                     </div>
@@ -76,21 +76,34 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <div class="form-group form-caja">
-                                            <input asp-for="Tipo" class="form-control" placeholder="Tipo de Evento" required />
-                                            <span asp-validation-for="Tipo" class="text-danger"></span>
+                                            <input asp-for="HoraInicio" class="form-control" placeholder="Hora de Inicio" required />
+                                            <span asp-validation-for="HoraInicio" class="text-danger"></span>
                                         </div>
                                     </div>                                   
                                 </div>
                                 <div class="form-row input-group">
-                                    <div class="form-group col-md-7">
-                                        <div class="form-group form-caja">
-                                            <input asp-for="HoraInicio" class="form-control" placeholder="Hora de Inicio" required />
-                                            <span asp-validation-for="HoraInicio" class="text-danger"></span>
-                                        </div>
-                                    </div> <div class="form-group col-md-7">
+                                    <div class="form-group col-md-10">
                                         <div class="form-group form-caja">
                                             <input asp-for="HoraFinalizacion" class="form-control" placeholder="Hora de Finalización" required />
                                             <span asp-validation-for="HoraFinalizacion" class="text-danger"></span>
+                                        </div>
+                                    </div> <div class="form-group col-md-10">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Name_Cliente" class="form-control" placeholder="Nombre Completo del Cliente o Empresa" required />
+                                            <span asp-validation-for="Name_Cliente" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row input-group">
+                                    <div class="form-group col-md-10">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Telefono" class="form-control" placeholder="Tel: (809)" required />
+                                            <span asp-validation-for="Telefono" class="text-danger"></span>
+                                        </div>
+                                    </div> <div class="form-group col-md-10">
+                                        <div class="form-group form-caja">
+                                            <input asp-for="Email" class="form-control" placeholder="Correo Electrónico (evento@gmail)" required />
+                                            <span asp-validation-for="Email" class="text-danger"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +113,7 @@
                                         <button type="submit" class="btn btn-sm btn-success">
                                             <i class="fa fa-save"> </i> Guardar
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" id="cancelar_formulario">
                                             <i class="fa fa-ban"></i> Cancelar
                                         </button>
                                         <br />
@@ -168,7 +181,103 @@
                 <br />
             </div>
         </div>
+        <!--Modal-->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="modal-header">
+                    <h2>Confirmar Datos del Eventos</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Por favor, revisa la información antes de confirmar:</p>
+                    <p><strong>Nombre/Título:</strong> <span id="modalNombreO_Titulo"></span></p>
+                    <p><strong>Cliente ID:</strong> <span id="modalClienteID"></span></p>
+                    <p><strong>Lugar:</strong> <span id="modalLugar"></span></p>
+                    <p><strong>Atracciones:</strong> <span id="modalAtracciones"></span></p>
+                    <p><strong>Descripción:</strong> <span id="modalDescripcion"></span></p>
+                    <p><strong>Dirección:</strong> <span id="modalDireccion"></span></p>
+                    <p><strong>Fecha y Hora:</strong> <span id="modalFechaHoraEvento"></span></p>
+                    <p><strong>Tipo de Evento:</strong> <span id="modalTipoDeEvento"></span></p>
+                    <p><strong>Hora de Inicio:</strong> <span id="modalHoraDeInicio"></span></p>
+                    <p><strong>Hora de Finalización:</strong> <span id="modalHoraDeFinalizacion"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnConfirmarEnvio" class="btn btn-modal-confirm"><i class="fas fa-check-circle"></i> Confirmar y Enviar</button>
+                    <button type="button" id="btnCerrarModal" class="btn btn-modal-cancel"><i class="fas fa-times-circle"></i> Cancelar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+@section Scripts {
+@*     @Scripts.Render("~/bundles/jqueryval") *@
+    <script>
+        $(document).ready(function () {
+            var modal = $('#confirmModal');
+            var btnMostrarModal = $('#btnMostrarModal');
+            var btnConfirmarEnvio = $('#btnConfirmarEnvio');
+            var btnCerrarModal = $('#btnCerrarModal');
+            var spanClose = $('.close-button');
+            var form = $('#formEventoPublico');
+
+            btnMostrarModal.on('click', function () {
+                // Validar el formulario con jQuery Validation
+                if (!form.valid()) {
+                    return; // Detener si hay errores de validación
+                }
+
+                // Cargar los datos del formulario en el modal
+                $('#modalNombreO_Titulo').text($('#NombreO_Titulo').val());
+                $('#modalClienteID').text($('#ClienteID').val());
+                $('#modalLugar').text($('#Lugar').val());
+                $('#modalAtracciones').text($('#Atracciones').val());
+                $('#modalDescripcion').text($('#Descripcion').val());
+                $('#modalDireccion').text($('#Direccion').val());
+
+                // Formatear la fecha y hora para mostrarla de forma legible
+                var fechaHoraInput = $('#FechaHoraEvento').val(); // Formato YYYY-MM-DDTHH:mm
+                if (fechaHoraInput) {
+                    var dateTime = new Date(fechaHoraInput);
+                    var options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true };
+                    $('#modalFechaHoraEvento').text(dateTime.toLocaleDateString('es-ES', options));
+                } else {
+                    $('#modalFechaHoraEvento').text('No especificado');
+                }
+
+                $('#modalTipoDeEvento').text($('#TipoDeEvento').val());
+                $('#modalHoraDeInicio').text($('#HoraDeInicio').val());
+                $('#modalHoraDeFinalizacion').text($('#HoraDeFinalizacion').val());
+
+                modal.css('display', 'flex'); // Mostrar el modal
+            });
+
+            btnConfirmarEnvio.on('click', function () {
+                // Si el usuario confirma, enviar el formulario
+                form.submit();
+            });
+
+            btnCerrarModal.on('click', function () {
+                modal.css('display', 'none'); // Ocultar el modal
+            });
+
+            spanClose.on('click', function () {
+                modal.css('display', 'none'); // Ocultar el modal al hacer clic en la 'x'
+            });
+
+            // Cerrar el modal si se hace clic fuera del contenido
+            $(window).on('click', function (event) {
+                if ($(event.target).is(modal)) {
+                    modal.css('display', 'none');
+                }
+            });
+        });
+
+        //Cancelar el envio del formulario
+        let cancelar_formulario = document.getElementById('cancelar_formulario');
+        cancelar_formulario.addEventListener('click', function() {
+            location.reload();
+        });
+    </script>
+}
 

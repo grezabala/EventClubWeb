@@ -29,9 +29,16 @@ namespace ClubWebApp.Controllers
             try
             {
                 var _list = await _eventosService.GetEventosAsync();
-                if (_list is null || !_list.Any())
+                if (_list == null || !_list.Any()) 
+                {
                     return RedirectToAction("Service", "Home");
+                }
 
+                if (!_list.Any()) 
+                {
+                    return RedirectToAction("Service", "Home");
+                
+                }
 
                 return View(_list);
 
